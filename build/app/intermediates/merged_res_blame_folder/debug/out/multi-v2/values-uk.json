@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\c1935888\\OneDrive - Cardiff University\\Year 3\\MeditiationApp\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
+            "outputFile": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\c1935888\\.gradle\\caches\\transforms-2\\files-2.1\\2e94107f30f39be366a17347c2bf100b\\core-1.1.0\\res\\values-uk\\values-uk.xml",
+                    "source": "C:\\Users\\hamid\\.gradle\\caches\\transforms-3\\7a8b1e56b09c8ac8e17cc90964706dca\\transformed\\core-1.1.0\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
