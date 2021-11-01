@@ -42,7 +42,7 @@ class _LoginDemoState extends State<LoginDemo> {
                     /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                    child: Image.asset('android/app/src/main/res/drawable/meditationlogo.jpg')),
+                    child: Image.asset('assets/images/meditationlogo.jpg')),
               ),
             ),
             Padding(
@@ -74,7 +74,7 @@ class _LoginDemoState extends State<LoginDemo> {
               },
               child: Text(
                 'Forgot Password?',
-                style: TextStyle(color: Colors.black, fontSize: 15),
+                style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
             Container(
@@ -96,7 +96,9 @@ class _LoginDemoState extends State<LoginDemo> {
             SizedBox(
               height: 130,
             ),
-            Text('New User? Create Account')
+            Text(
+                'New User? Create Account',
+            style: TextStyle(fontSize: 20),)
           ],
         ),
       ),
