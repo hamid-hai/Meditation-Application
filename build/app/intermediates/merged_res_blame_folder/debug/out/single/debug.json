@@ -16,10 +16,6 @@
         "source": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\build\\app\\intermediates\\merged_res\\debug\\drawable_launch_background.xml.flat",
-        "source": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
-    },
-    {
         "merged": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\build\\app\\intermediates\\merged_res\\debug\\drawable-v21_launch_background.xml.flat",
         "source": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
     },
