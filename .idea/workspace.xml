@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c59bfea-9bd7-4db2-9813-3d398564bc0b" name="Default Changelist" comment="Firebase connection made with the Meditiation App">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/LoginPage_dart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/services/auth.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" />
+    <list default="true" id="5c59bfea-9bd7-4db2-9813-3d398564bc0b" name="Default Changelist" comment="Anano connection connection made, needs testing however 'User?' might refer to 'User', double check documentation">
+      <change afterPath="$PROJECT_DIR$/lib/screens/main.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/screens/wrapper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/LoginPage_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/LoginPage_dart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
@@ -17,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/.last_build_id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/NOTICES.Z" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
@@ -26,7 +25,9 @@
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/LoginPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/LoginPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/authenticate/LoginPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/UserDashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home/UserDashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditationapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/meditationapp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,10 +78,12 @@
       <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\android\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\lib\screens\authenticate" />
+      <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\lib\screens\home" />
       <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\assets\images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flutter.LoginPage.dart">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
@@ -109,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635947077176</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Anano connection connection made, needs testing however 'User?' might refer to 'User', double check documentation">
+      <created>1635988656206</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635988656207</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +138,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Commit, created project and login page designed with Flutter created, need to add logic with Firebase and complete Dashboard" />
     <MESSAGE value="Firebase connection made with the Meditiation App" />
-    <option name="LAST_COMMIT_MESSAGE" value="Firebase connection made with the Meditiation App" />
+    <MESSAGE value="Anano connection connection made, needs testing however 'User?' might refer to 'User', double check documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anano connection connection made, needs testing however 'User?' might refer to 'User', double check documentation" />
   </component>
 </project>
