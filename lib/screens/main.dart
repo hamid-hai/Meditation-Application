@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+
 import 'package:meditationapp/screens/wrapper.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Wrapper(),
+      home: Wrapper(),
     );
   }
 }
+
+

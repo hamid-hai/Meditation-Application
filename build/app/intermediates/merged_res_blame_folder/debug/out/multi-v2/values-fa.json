@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
+            "outputFile": "C:\\Users\\c1935888\\OneDrive - Cardiff University\\Documents\\MeditationApp\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hamid\\.gradle\\caches\\transforms-3\\046b2aec375336c88687278cce067f8d\\transformed\\jetified-play-services-basement-17.1.0\\res\\values-fa\\values.xml",
+                    "source": "C:\\Users\\c1935888\\.gradle\\caches\\transforms-3\\046b2aec375336c88687278cce067f8d\\transformed\\jetified-play-services-basement-17.1.0\\res\\values-fa\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hamid\\.gradle\\caches\\transforms-3\\5d13bbc733eac462d76227f0a618bd92\\transformed\\core-1.1.0\\res\\values-fa\\values-fa.xml",
+                    "source": "C:\\Users\\c1935888\\.gradle\\caches\\transforms-3\\5d13bbc733eac462d76227f0a618bd92\\transformed\\core-1.1.0\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hamid\\.gradle\\caches\\transforms-3\\eec2f797a2bf5c565bc3c9434069417c\\transformed\\jetified-play-services-base-17.1.0\\res\\values-fa\\values.xml",
+                    "source": "C:\\Users\\c1935888\\.gradle\\caches\\transforms-3\\eec2f797a2bf5c565bc3c9434069417c\\transformed\\jetified-play-services-base-17.1.0\\res\\values-fa\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
