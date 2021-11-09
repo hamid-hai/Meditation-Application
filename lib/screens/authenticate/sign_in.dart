@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:meditationapp/services/auth.dart';
 import '../home/UserDashboard.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -8,6 +9,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  final AuthService _auth = AuthService();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,10 +94,23 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: BoxDecoration(
                   color: Colors.deepPurpleAccent, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
-                onPressed: () {
+                onPressed: () async {
+
+                  // No Firebase app when this code is entered into application
+                  // ERROR FIXED, modifed 'main.dart' and dependency to pubspec.yaml
+
+                  dynamic result = await _auth.signInAnon();
+                  if (result == null){
+                    print('error singing in');
+                  }
+                  else {
+                    print('signed in');
+                    print(result);
+                  }
+
                 },
                 child: Text(
-                  'Login Ana',
+                  'Login Anon',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
