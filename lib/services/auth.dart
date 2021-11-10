@@ -1,17 +1,32 @@
+import 'dart:ffi';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:meditationapp/models/myuser.dart';
 
 class AuthService {
 
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // sign in anao
+  // creating MyUser object, filtering out un-needed info
 
+  MyUser? _userfromFirebase(User user) {
+    return user != null ? MyUser(uid: user.uid) : null;
+  }
+
+  // auth change user stream
+  Stream<MyUser?> get user {
+    return _auth
+        .authStateChanges()
+        .map((User? user) => _userfromFirebase(user!));
+  }
+
+  // sign in anao
   Future signInAnon() async {
     try {
       UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
-      return user;
+      return _userfromFirebase(user!);
     } catch(e) {
       print(e.toString());
       return null;

@@ -98,6 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   // No Firebase app when this code is entered into application
                   // ERROR FIXED, modifed 'main.dart' and dependency to pubspec.yaml
+                  // Can be removed at a later stage as login with creds is recommenbed to provide custom info
 
                   dynamic result = await _auth.signInAnon();
                   if (result == null){
@@ -105,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                   else {
                     print('signed in');
-                    print(result);
+                    print('uid = ' + result.uid);
                   }
 
                 },
