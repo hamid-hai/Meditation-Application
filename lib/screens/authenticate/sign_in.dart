@@ -12,6 +12,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final AuthService _auth = AuthService();
 
+  // text field state
+  String email = '';
+  String password = '';
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text("The Meditiation App"),
         backgroundColor: Colors.deepPurple,
       ),
+
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -36,22 +41,33 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Image.asset('assets/images/meditationlogo.jpg')),
               ),
             ),
+
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
+              child: TextFormField(
+                onChanged: (val) {
+                  setState(() {
+                    email = val;
+                  });
+                },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
                     hintText: 'Enter valid email'),
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
-
+              child: TextFormField(
+                onChanged: (val) {
+                  setState(() {
+                    password = val;
+                  });
+                  },
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -59,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'Enter password'),
               ),
             ),
+
             TextButton(
               onPressed: (){
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
@@ -68,13 +85,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
+
             Container(
               height: 50,
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.deepPurpleAccent, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
-                onPressed: () {
+                onPressed: () async {
+                print(email);
+                print(password);
                 },
                 child: Text(
                   'Login',
@@ -86,35 +106,6 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
-            ),
-
-            Container(
-              height: 50,
-              width: 250,
-              decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent, borderRadius: BorderRadius.circular(20)),
-              child: TextButton(
-                onPressed: () async {
-
-                  // No Firebase app when this code is entered into application
-                  // ERROR FIXED, modifed 'main.dart' and dependency to pubspec.yaml
-                  // Can be removed at a later stage as login with creds is recommenbed to provide custom info
-
-                  dynamic result = await _auth.signInAnon();
-                  if (result == null){
-                    print('error singing in');
-                  }
-                  else {
-                    print('signed in');
-                    print('uid = ' + result.uid);
-                  }
-
-                },
-                child: Text(
-                  'Login Anon',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-              ),
             ),
 
             SizedBox(
