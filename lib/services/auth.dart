@@ -41,4 +41,13 @@ class AuthService {
 
   // sign out
 
+  Future signOut() async {
+    try {
+      // .signOut is part of Firebase, accessing it through the _auth instance
+      return await _auth.signOut();
+    } catch(e) {
+      print(e.toString());
+    }
+  }
+
 }

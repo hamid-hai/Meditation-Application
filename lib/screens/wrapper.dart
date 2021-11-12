@@ -15,10 +15,13 @@ class Wrapper extends StatelessWidget {
     // Flutter is now null safe, always put '?' or '!' around 'MyUser'
     
     final user = Provider.of<MyUser?>(context);
-    print(user);
 
     // return either login or dashboard
-    return Authenticate();
+    if (user == null) {
+      return Authenticate();
+    } else {
+      return UserDashboard();
+    }
   }
 }
 
