@@ -3,7 +3,9 @@ import 'package:meditationapp/services/auth.dart';
 
 
 class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+
+  final Function toggleView;
+  Register({ required this.toggleView });
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -12,9 +14,11 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
 
   final AuthService _auth = AuthService();
+  final _formkey = GlobalKey<FormState>();
 
   String email = '';
   String password = '';
+  String regError = '';
 
   @override
   Widget build(BuildContext context) {
@@ -25,86 +29,71 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.deepPurple,
       ),
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: Center(
-                child: Container(
-                    width: 200,
-                    height: 150,
-                    /*decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(50.0)),*/
-                    child: Image.asset('assets/images/meditationlogo.jpg')),
-              ),
-            ),
-
-            Padding(
-              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextFormField(
-                onChanged: (val) {
-                  setState(() {
-                    email = val;
-                  });
-                },
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                    hintText: 'Enter valid email'),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              //padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextFormField(
-                onChanged: (val) {
-                  setState(() {
-                    password = val;
-                  });
-                },
-                obscureText: true,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter password'),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-            ),
-
-
-            Container(
-              height: 50,
-              width: 250,
-              decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent,
-                  borderRadius: BorderRadius.circular(20)),
-              child: TextButton(
-                onPressed: () async {
-                  print(email);
-                  print(password);
-                },
-                child: Text(
-                  'Register',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 50),
+        child: Form(
+          key: _formkey,
+          child: Column(
+            children: <Widget>[
+              Padding(
+                //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextFormField(
+                  validator: (val) => val!.isEmpty ? 'Please enter a valid email' : null,
+                  onChanged: (val) {
+                    setState(() {
+                      email = val;
+                    });
+                  },
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                      hintText: 'Enter valid email'),
                 ),
               ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-            ),
-
-          ],
+              SizedBox(height: 20.0),
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 15, bottom: 0),
+                //padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextFormField(
+                  validator: (val) => val!.length < 6 ? 'Enter a strong password (6+ characters)' : null,
+                  onChanged: (val) {
+                    setState(() {
+                      password = val;
+                    });
+                  },
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                      hintText: 'Enter password'),
+                ),
+              ),
+              SizedBox(height: 20.0),
+              ElevatedButton(
+                  child: Text(
+                    'Register',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () async {
+                    if(_formkey.currentState!.validate()){
+                      dynamic result = await _auth.regEmailPassword(email, password);
+                      if(result == null) {
+                        setState(() {
+                          regError = 'Please supply valid credentials';
+                        });
+                      }
+                    }
+                  }
+              ),
+              SizedBox(height: 12.0),
+              Text(
+                regError,
+                style: TextStyle(color: Colors.red, fontSize: 14.0),
+              )
+            ],
+          ),
         ),
       ),
     );

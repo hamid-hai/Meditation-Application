@@ -1,9 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meditationapp/screens/authenticate/register.dart';
 
 import 'package:meditationapp/services/auth.dart';
 import '../home/UserDashboard.dart';
 
 class LoginScreen extends StatefulWidget {
+
+  final Function toggleView;
+  LoginScreen({ required this.toggleView });
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -111,9 +117,20 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 130,
             ),
-            Text(
-              'New User? Create Account',
-              style: TextStyle(fontSize: 20),)
+
+            // Changing from Text to TextButton allows actions to be performed on the text with a transparent window being added.
+            // Reference https://stackoverflow.com/a/66580557
+            TextButton(
+              onPressed: () {
+                  widget.toggleView();
+              },
+              child: Text(
+                'New User? Create Account',
+              // Try to set text thickness to normal
+              style: TextStyle(fontSize: 20, color: Colors.black, fontStyle: FontStyle.normal),
+              ),
+            ),
+
           ],
         ),
       ),

@@ -18,6 +18,7 @@ class _UserDashboardState extends State<UserDashboard> {
         title: Text('Dashboard'),
         backgroundColor: Colors.deepPurple,
         actions: <Widget>[
+          // Text Button used as a replacement for FlatButton
           // Reference https://stackoverflow.com/a/51266672
           TextButton.icon(onPressed: () async {
             await _auth.signOut();

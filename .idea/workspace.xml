@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c59bfea-9bd7-4db2-9813-3d398564bc0b" name="Default Changelist" comment="Added the provider package to pubspec.yaml, now can access the providers results within wrapper.dart, can be used to determine what screen to show the user depending on if they're signed in or not.">
+    <list default="true" id="5c59bfea-9bd7-4db2-9813-3d398564bc0b" name="Default Changelist" comment="Removal of sign in ananmoyously feature and added local variables for email and password to be stored and checked against Firebase. Should print email and password when 'Sign In' button is pressed">
+      <change afterPath="$PROJECT_DIR$/lib/screens/authenticate/register_old.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
@@ -12,20 +13,20 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/NOTICES.Z.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/NOTICES.Z.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/compressed_assets/debug/out/assets/flutter_assets/kernel_blob.bin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/NOTICES.Z" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/NOTICES.Z" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/authenticate/authenticate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/authenticate/authenticate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/authenticate/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/authenticate/register.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/authenticate/sign_in.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/authenticate/sign_in.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/home/UserDashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home/UserDashboard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/wrapper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/wrapper.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/services/auth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/auth.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,12 +68,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/screens/authenticate" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\c1935888\OneDrive - Cardiff University\Documents\MeditationApp\meditationapp\lib\screens\authenticate" />
       <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\android\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -147,7 +149,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636556466421</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Firebase sign out function created, using firebase packages, now can sign in and out correctly, testing with anonymous sign in still implemented.">
+      <created>1636728845095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636728845096</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Created register.dart for creating a user account to login into the Meditation App">
+      <created>1636733413381</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636733413381</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Removal of sign in ananmoyously feature and added local variables for email and password to be stored and checked against Firebase. Should print email and password when 'Sign In' button is pressed">
+      <created>1636733529224</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1636733529224</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +195,9 @@
     <MESSAGE value="Stream created to listen for sign in changes within auth.dart, need to take the infomation the Stream provides and use to change the interface accordingily" />
     <MESSAGE value="Stream created to listen for sign in changes within auth.dart, need to take the information the Stream provides and use to change the interface accordingly" />
     <MESSAGE value="Added the provider package to pubspec.yaml, now can access the providers results within wrapper.dart, can be used to determine what screen to show the user depending on if they're signed in or not." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the provider package to pubspec.yaml, now can access the providers results within wrapper.dart, can be used to determine what screen to show the user depending on if they're signed in or not." />
+    <MESSAGE value="Firebase sign out function created, using firebase packages, now can sign in and out correctly, testing with anonymous sign in still implemented." />
+    <MESSAGE value="Created register.dart for creating a user account to login into the Meditation App" />
+    <MESSAGE value="Removal of sign in ananmoyously feature and added local variables for email and password to be stored and checked against Firebase. Should print email and password when 'Sign In' button is pressed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removal of sign in ananmoyously feature and added local variables for email and password to be stored and checked against Firebase. Should print email and password when 'Sign In' button is pressed" />
   </component>
 </project>
