@@ -36,8 +36,20 @@ class _RegisterState extends State<Register> {
           child: Column(
             children: <Widget>[
               Padding(
+                padding: const EdgeInsets.only(top: 60.0),
+                child: Center(
+                  child: Container(
+                      width: 200,
+                      height: 150,
+                      /*decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(50.0)),*/
+                      child: Image.asset('assets/images/meditationlogo.jpg')),
+                ),
+              ),
+              Padding(
                 //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 0),
                 child: TextFormField(
                   validator: (val) => val!.isEmpty ? 'Please enter a valid email' : null,
                   onChanged: (val) {
@@ -53,9 +65,7 @@ class _RegisterState extends State<Register> {
               ),
               SizedBox(height: 20.0),
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 15.0, right: 15.0, top: 15, bottom: 0),
-                //padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 0),
                 child: TextFormField(
                   validator: (val) => val!.length < 6 ? 'Enter a strong password (6+ characters)' : null,
                   onChanged: (val) {

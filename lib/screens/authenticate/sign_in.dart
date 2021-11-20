@@ -17,10 +17,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
 
   final AuthService _auth = AuthService();
+  final _formkey = GlobalKey<FormState>();
 
   // text field state
   String email = '';
   String password = '';
+  String regError = '';
 
 
   @override
@@ -32,11 +34,13 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.deepPurple,
       ),
 
-      body: SingleChildScrollView(
-        child: Column(
+      body: Container(
+        child: Form(
+          key: _formkey,
+          child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 30.0),
               child: Center(
                 child: Container(
                     width: 200,
@@ -52,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
+                validator: (val) => val!.isEmpty ? 'Please enter a valid email' : null,
                 onChanged: (val) {
                   setState(() {
                     email = val;
@@ -69,6 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
+                validator: (val) => val!.length < 6 ? 'Enter a strong password (6+ characters)' : null,
                 onChanged: (val) {
                   setState(() {
                     password = val;
@@ -99,14 +105,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.deepPurpleAccent, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () async {
-                print(email);
-                print(password);
+                  if(_formkey.currentState!.validate()){
+                    dynamic result = await _auth.signInEmailPassword(email, password);
+                    // dynamic result = await _auth.regEmailPassword(email, password);
+                    if(result == null) {
+                      setState(() {
+                        regError = 'Please supply valid credentials';
+                      });
+                    }
+                    print('valid');
+                  }
                 },
                 child: Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
+            ),
+
+            SizedBox(height: 12.0),
+            Text(
+              regError,
+              style: TextStyle(color: Colors.red, fontSize: 14.0),
             ),
 
             Padding(
@@ -130,10 +150,10 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(fontSize: 20, color: Colors.black, fontStyle: FontStyle.normal),
               ),
             ),
-
           ],
         ),
       ),
+    ),
     );
   }
 }

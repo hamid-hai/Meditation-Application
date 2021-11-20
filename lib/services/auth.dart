@@ -21,10 +21,11 @@ class AuthService {
         .map((User? user) => _userfromFirebase(user!));
   }
 
-  // sign in anao
-  Future signInAnon() async {
+  // sign in with email & password
+
+  Future signInEmailPassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.signInAnonymously();
+      UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
       return _userfromFirebase(user!);
     } catch(e) {
@@ -32,8 +33,6 @@ class AuthService {
       return null;
     }
   }
-
-  // sign in with email & password
 
 
   // register with email and password
