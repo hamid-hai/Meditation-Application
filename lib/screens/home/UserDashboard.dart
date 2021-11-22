@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meditationapp/services/auth.dart';
 
 class UserDashboard extends StatefulWidget {
   @override
@@ -6,12 +7,25 @@ class UserDashboard extends StatefulWidget {
 }
 
 class _UserDashboardState extends State<UserDashboard> {
+
+  final AuthService _auth = AuthService();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Dashboard'),
         backgroundColor: Colors.deepPurple,
+        actions: <Widget>[
+          // Text Button used as a replacement for FlatButton
+          // Reference https://stackoverflow.com/a/51266672
+          TextButton.icon(onPressed: () async {
+            await _auth.signOut();
+          },
+              icon: Icon(Icons.person),
+              label: Text('Sign out'))
+        ],
       ),
       body: Center(
         child: Container(

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\hamid\\Documents\\MeditiationApp\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
+            "outputFile": "C:\\Users\\c1935888\\OneDrive - Cardiff University\\Documents\\MeditationApp\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hamid\\.gradle\\caches\\transforms-3\\7a8b1e56b09c8ac8e17cc90964706dca\\transformed\\core-1.1.0\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\c1935888\\.gradle\\caches\\transforms-3\\5d13bbc733eac462d76227f0a618bd92\\transformed\\core-1.1.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

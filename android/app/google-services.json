@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "55095281017",
+    "project_id": "meditation-app-2b050",
+    "storage_bucket": "meditation-app-2b050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55095281017:android:3f6f43f813c714ad2d9ba8",
+        "android_client_info": {
+          "package_name": "com.example.meditationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55095281017-mnlfk6nbo0orjhoo4b5383mds2ab4gf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRHiiNC7IyPJQx23sj13chwpS-oj8Yl3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55095281017-mnlfk6nbo0orjhoo4b5383mds2ab4gf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
