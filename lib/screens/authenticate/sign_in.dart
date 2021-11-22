@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/authenticate/register.dart';
+import 'package:meditationapp/screens/shared/loading.dart';
 
 import 'package:meditationapp/services/auth.dart';
 import '../home/UserDashboard.dart';
@@ -19,6 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final AuthService _auth = AuthService();
   final _formkey = GlobalKey<FormState>();
 
+  bool loading = false;
+
   // text field state
   String email = '';
   String password = '';
@@ -27,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? LoadingWidget() : Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("The Meditiation App"),
@@ -106,11 +109,15 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextButton(
                 onPressed: () async {
                   if(_formkey.currentState!.validate()){
+                    setState(() {
+                      loading = true;
+                    });
                     dynamic result = await _auth.signInEmailPassword(email, password);
                     // dynamic result = await _auth.regEmailPassword(email, password);
                     if(result == null) {
                       setState(() {
                         regError = 'Please supply valid credentials';
+                        loading = false;
                       });
                     }
                     print('valid');

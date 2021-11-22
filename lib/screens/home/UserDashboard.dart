@@ -27,21 +27,25 @@ class _UserDashboardState extends State<UserDashboard> {
               label: Text('Sign out'))
         ],
       ),
-      body: Center(
+      body: SingleChildScrollView(
+        child: Center(
         child: Container(
-          height: 80,
-          width: 300,
+
+          height: 50,
+          width: 250,
+
           decoration: BoxDecoration(
               color: Colors.deepPurpleAccent, borderRadius: BorderRadius.circular(10)),
           child: Center(
           child: Text(
-              'Welcome to your wellness dashboard',
+              'Welcome "User"',
               style: TextStyle(color: Colors.white, fontSize: 25),
               textAlign: TextAlign.center,
             ),
           )
         ),
       ),
-    );
+      ),
+      );
   }
 }
