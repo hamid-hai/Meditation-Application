@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.deepPurple,
       ),
 
-      body: Container(
+      body: SingleChildScrollView(
         child: Form(
           key: _formkey,
           child: Column(
