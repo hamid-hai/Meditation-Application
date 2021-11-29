@@ -60,6 +60,7 @@ class _UserDashboardState extends State<UserDashboard> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        Image.asset('assets/images/userdashboard/audio-wavesPNG.png'),
                         Text('Ambient Sounds')
                       ],
                     ),
@@ -78,6 +79,7 @@ class _UserDashboardState extends State<UserDashboard> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        Image.asset('assets/images/userdashboard/moodPNG.png'),
                         Text('Mood Logs')
                       ],
                     ),
@@ -96,6 +98,7 @@ class _UserDashboardState extends State<UserDashboard> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        Image.asset('assets/images/userdashboard/supportPNG.png'),
                         Text('Extra Support')
                       ],
                     ),
@@ -114,6 +117,7 @@ class _UserDashboardState extends State<UserDashboard> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        Image.asset('assets/images/userdashboard/delete.PNG.png'),
                         Text('Advert Removal')
                       ],
                     ),
