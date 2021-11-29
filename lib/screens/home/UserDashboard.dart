@@ -13,6 +13,7 @@ class _UserDashboardState extends State<UserDashboard> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Dashboard'),
@@ -27,25 +28,105 @@ class _UserDashboardState extends State<UserDashboard> {
               label: Text('Sign out'))
         ],
       ),
-      body: SingleChildScrollView(
-        child: Center(
-        child: Container(
-
-          height: 50,
-          width: 250,
-
-          decoration: BoxDecoration(
-              color: Colors.deepPurpleAccent, borderRadius: BorderRadius.circular(10)),
-          child: Center(
-          child: Text(
-              'Welcome "User"',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-              textAlign: TextAlign.center,
-            ),
-          )
+      body: Stack(
+        children: <Widget>[
+          Container(
+            height: 50,
+           child: Center(
+            child: Text(
+            'Welcome "User"',
+            style: TextStyle(color: Colors.black, fontSize: 25),
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
-      ),
-      );
+          Padding(
+            padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
+            child: GridView.count(
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              primary: false,
+              children: <Widget>[
+                Card(
+                  elevation: 4,
+                  // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
+                  child: new InkWell(
+                    onTap: () {
+                      print('Amibent Sounds short press');
+                    },
+                    onLongPress: () {
+                      print('Amibent Sounds long press');
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Ambient Sounds')
+                      ],
+                    ),
+                  ),
+                ),
+
+                Card(
+                  elevation: 4,
+                  child: new InkWell(
+                    onTap: () {
+                      print('Mood Logs short press');
+                    },
+                    onLongPress: () {
+                      print('Mood Logs long press');
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Mood Logs')
+                      ],
+                    ),
+                  ),
+                ),
+
+                Card(
+                  elevation: 4,
+                  child: new InkWell(
+                    onTap: () {
+                      print('Extra Support short press');
+                    },
+                    onLongPress: () {
+                      print('Extra Support long press');
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Extra Support')
+                      ],
+                    ),
+                  ),
+                ),
+
+                Card(
+                  elevation: 4,
+                  child: new InkWell(
+                    onTap: () {
+                      print('Advert Removal short press');
+                    },
+                    onLongPress: () {
+                      print('Advert Removal long press');
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Advert Removal')
+                      ],
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          )
+    ],
+    )
+    );
+
+
   }
 }

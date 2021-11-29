@@ -8,8 +8,8 @@ import '../home/UserDashboard.dart';
 
 class LoginScreen extends StatefulWidget {
 
-  final Function toggleView;
-  LoginScreen({ required this.toggleView });
+  // final Function toggleView;
+  // LoginScreen({ required this.toggleView });
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -149,7 +149,9 @@ class _LoginScreenState extends State<LoginScreen> {
             // Reference https://stackoverflow.com/a/66580557
             TextButton(
               onPressed: () {
-                  widget.toggleView();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Register()));
               },
               child: Text(
                 'New User? Create Account',
