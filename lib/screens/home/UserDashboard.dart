@@ -3,6 +3,7 @@ import 'package:meditationapp/screens/home/features/ambientsounds.dart';
 import 'package:meditationapp/screens/home/features/moodslogs.dart';
 import 'package:meditationapp/screens/home/features/supportpage.dart';
 import 'package:meditationapp/services/auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'features/removalads.dart';
 
@@ -60,7 +61,10 @@ class _UserDashboardState extends State<UserDashboard> {
                       Navigator.push((context), MaterialPageRoute(builder: (context) => Sounds()));
                     },
                     onLongPress: () {
-                      print('Amibent Sounds long press');
+                      // REFERENCE https://stackoverflow.com/a/45948243
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("Ambient Sounds"),
+                      ));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +84,9 @@ class _UserDashboardState extends State<UserDashboard> {
                       Navigator.push((context), MaterialPageRoute(builder: (context) => MoodsLogs()));
                     },
                     onLongPress: () {
-                      print('Mood Logs long press');
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("Mood Logs"),
+                      ));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +105,9 @@ class _UserDashboardState extends State<UserDashboard> {
                       Navigator.push((context), MaterialPageRoute(builder: (context) => SupportPage()));
                     },
                     onLongPress: () {
-                      print('Extra Support long press');
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("Extra Support"),
+                      ));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -118,7 +126,9 @@ class _UserDashboardState extends State<UserDashboard> {
                       Navigator.push((context), MaterialPageRoute(builder: (context) => AdvertRemoval()));
                     },
                     onLongPress: () {
-                      print('Advert Removal long press');
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("Advert Removal"),
+                      ));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
