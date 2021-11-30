@@ -91,15 +91,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
 
-            TextButton(
-              onPressed: (){
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
-              },
-              child: Text(
-                'Forgot Password?',
-                style: TextStyle(color: Colors.black, fontSize: 20),
-              ),
-            ),
 
             Container(
               height: 50,

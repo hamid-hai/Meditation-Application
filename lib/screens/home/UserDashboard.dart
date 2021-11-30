@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:meditationapp/screens/home/features/ambientsounds.dart';
+import 'package:meditationapp/screens/home/features/moodslogs.dart';
+import 'package:meditationapp/screens/home/features/supportpage.dart';
 import 'package:meditationapp/services/auth.dart';
+
+import 'features/removalads.dart';
 
 class UserDashboard extends StatefulWidget {
   @override
@@ -52,7 +57,7 @@ class _UserDashboardState extends State<UserDashboard> {
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                   child: new InkWell(
                     onTap: () {
-                      print('Amibent Sounds short press');
+                      Navigator.push((context), MaterialPageRoute(builder: (context) => Sounds()));
                     },
                     onLongPress: () {
                       print('Amibent Sounds long press');
@@ -60,6 +65,7 @@ class _UserDashboardState extends State<UserDashboard> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        // TODO Find why images wont be displayed in userdashboard directory
                         Image.asset('assets/images/userdashboard/audio-wavesPNG.png'),
                         Text('Ambient Sounds')
                       ],
@@ -71,7 +77,7 @@ class _UserDashboardState extends State<UserDashboard> {
                   elevation: 4,
                   child: new InkWell(
                     onTap: () {
-                      print('Mood Logs short press');
+                      Navigator.push((context), MaterialPageRoute(builder: (context) => MoodsLogs()));
                     },
                     onLongPress: () {
                       print('Mood Logs long press');
@@ -90,7 +96,7 @@ class _UserDashboardState extends State<UserDashboard> {
                   elevation: 4,
                   child: new InkWell(
                     onTap: () {
-                      print('Extra Support short press');
+                      Navigator.push((context), MaterialPageRoute(builder: (context) => SupportPage()));
                     },
                     onLongPress: () {
                       print('Extra Support long press');
@@ -109,7 +115,7 @@ class _UserDashboardState extends State<UserDashboard> {
                   elevation: 4,
                   child: new InkWell(
                     onTap: () {
-                      print('Advert Removal short press');
+                      Navigator.push((context), MaterialPageRoute(builder: (context) => AdvertRemoval()));
                     },
                     onLongPress: () {
                       print('Advert Removal long press');
