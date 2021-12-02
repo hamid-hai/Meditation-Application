@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
-MERGED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
+ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-45:12
+MERGED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-45:12
 MERGED from [:firebase_auth] C:\Users\c1935888\StudioProjects\meditationapp\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:cloud_firestore] C:\Users\c1935888\StudioProjects\meditationapp\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\c1935888\StudioProjects\meditationapp\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
@@ -57,16 +57,16 @@ INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\deb
 		INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
+		ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-45:12
 		INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-41:12
+		ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:1-45:12
 		INJECTED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:1:11-69
 application
-ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:3:4-40:19
+ADDED from C:\Users\c1935888\StudioProjects\meditationapp\android\app\src\main\AndroidManifest.xml:3:4-44:18
 MERGED from [:firebase_auth] C:\Users\c1935888\StudioProjects\meditationapp\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] C:\Users\c1935888\StudioProjects\meditationapp\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] C:\Users\c1935888\StudioProjects\meditationapp\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
