@@ -47,11 +47,17 @@ dependencies:
 
 
 
+
+
   # Provider will help determine if a user is signed in and switch the screens depending on the case
   # Google provided solution
   provider: ^6.0.1
 
 dev_dependencies:
+
+  #Flutter dependency to fix adapative icon
+  flutter_launcher_icons: ^0.9.2
+
   flutter_test:
     sdk: flutter
 
@@ -80,6 +86,12 @@ flutter:
     - assets/images/userdashboard/delete.png
     - assets/images/userdashboard/mood.png
     - assets/images/userdashboard/support.png
+
+  flutter_icons:
+    android: true
+    image_path_android: assets/images/meditiationappicon.jpg
+    adaptive_icon_background: #ffffff
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
