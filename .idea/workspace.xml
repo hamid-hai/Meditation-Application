@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c59bfea-9bd7-4db2-9813-3d398564bc0b" name="Default Changelist" comment="Sign in feature copied across, now links and reads firebase for user logins.&#10;&#10;TODO Check if Firebase is auto encrypted">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/authenticate/sign_in.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/authenticate/sign_in.dart" afterDir="false" />
+    <list default="true" id="5c59bfea-9bd7-4db2-9813-3d398564bc0b" name="Default Changelist" comment="Images fixed by adding extra assets locations in pubspec.yaml. Added Stying. Added API may need debugging depending on if its an emulator issue">
+      <change beforePath="$PROJECT_DIR$/lib/screens/home/UserDashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home/UserDashboard.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +28,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="20HDlfLVmwrw4s1S8y8lbNpF08g" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -62,18 +53,27 @@
       <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\android\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\c1935888\StudioProjects\meditationapp\assets\images" />
       <recent name="C:\Users\c1935888\OneDrive - Cardiff University\Documents\MeditationApp\meditationapp\lib\screens\authenticate" />
       <recent name="C:\Users\c1935888\OneDrive - Cardiff University\Documents\MeditationApp\meditationapp\lib\screens" />
       <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\lib\screens\authenticate" />
       <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\lib\screens\home" />
-      <recent name="C:\Users\hamid\Documents\MeditiationApp\meditationapp\assets\images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="main.dart (1)" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/lib/screens/main.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.main.dart (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -168,8 +168,67 @@
       <option name="project" value="LOCAL" />
       <updated>1637426227755</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Routing between screens still an issue needs to be fixed.&#10;Implemented Cards on UserDashboard.dart with InkWell widgets allowing tapping to be performed, currently printing to console but will display toast message in the future for long presses">
+      <created>1638207750682</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1638207750682</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Created directory and uploaded images for cards">
+      <created>1638208373484</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1638208373485</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Icons implemented on cards however can't see the images due to unknown reason needs debugging">
+      <created>1638208607440</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638208607440</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Implemnted routes to navigate from cards on UserDashboard.dart to different sections">
+      <created>1638289929056</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638289929056</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Gitignore updated">
+      <created>1638290659159</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1638290659159</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added snackbars on longpress of cards in UserDashboard.dart">
+      <created>1638290708859</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638290708859</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Images fixed by adding extra assets locations in pubspec.yaml. Added Stying. Added API may need debugging depending on if its an emulator issue">
+      <created>1638439562739</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1638439562740</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -198,6 +257,13 @@
     <MESSAGE value="Removal of sign in ananmoyously feature and added local variables for email and password to be stored and checked against Firebase. Should print email and password when 'Sign In' button is pressed" />
     <MESSAGE value="Register feature with email and password complete, after signup, checked with validation you are sent to UserDashboard.dart." />
     <MESSAGE value="Sign in feature copied across, now links and reads firebase for user logins.&#10;&#10;TODO Check if Firebase is auto encrypted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sign in feature copied across, now links and reads firebase for user logins.&#10;&#10;TODO Check if Firebase is auto encrypted" />
+    <MESSAGE value="Routing between screens still an issue needs to be fixed.&#10;Implemented Cards on UserDashboard.dart with InkWell widgets allowing tapping to be performed, currently printing to console but will display toast message in the future for long presses" />
+    <MESSAGE value="Created directory and uploaded images for cards" />
+    <MESSAGE value="Icons implemented on cards however can't see the images due to unknown reason needs debugging" />
+    <MESSAGE value="Implemnted routes to navigate from cards on UserDashboard.dart to different sections" />
+    <MESSAGE value="Gitignore updated" />
+    <MESSAGE value="Added snackbars on longpress of cards in UserDashboard.dart" />
+    <MESSAGE value="Images fixed by adding extra assets locations in pubspec.yaml. Added Stying. Added API may need debugging depending on if its an emulator issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Images fixed by adding extra assets locations in pubspec.yaml. Added Stying. Added API may need debugging depending on if its an emulator issue" />
   </component>
 </project>

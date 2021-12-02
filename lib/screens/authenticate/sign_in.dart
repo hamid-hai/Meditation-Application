@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/authenticate/register.dart';
+import 'package:meditationapp/screens/shared/loading.dart';
 
 import 'package:meditationapp/services/auth.dart';
 import '../home/UserDashboard.dart';
 
 class LoginScreen extends StatefulWidget {
 
-  final Function toggleView;
-  LoginScreen({ required this.toggleView });
+  // final Function toggleView;
+  // LoginScreen({ required this.toggleView });
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -19,6 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final AuthService _auth = AuthService();
   final _formkey = GlobalKey<FormState>();
 
+  bool loading = false;
+
   // text field state
   String email = '';
   String password = '';
@@ -27,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? LoadingWidget() : Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("The Meditiation App"),
@@ -88,15 +91,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
 
-            TextButton(
-              onPressed: (){
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
-              },
-              child: Text(
-                'Forgot Password?',
-                style: TextStyle(color: Colors.black, fontSize: 20),
-              ),
-            ),
 
             Container(
               height: 50,
@@ -106,11 +100,15 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextButton(
                 onPressed: () async {
                   if(_formkey.currentState!.validate()){
+                    setState(() {
+                      loading = true;
+                    });
                     dynamic result = await _auth.signInEmailPassword(email, password);
                     // dynamic result = await _auth.regEmailPassword(email, password);
                     if(result == null) {
                       setState(() {
                         regError = 'Please supply valid credentials';
+                        loading = false;
                       });
                     }
                     print('valid');
@@ -142,7 +140,9 @@ class _LoginScreenState extends State<LoginScreen> {
             // Reference https://stackoverflow.com/a/66580557
             TextButton(
               onPressed: () {
-                  widget.toggleView();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Register()));
               },
               child: Text(
                 'New User? Create Account',

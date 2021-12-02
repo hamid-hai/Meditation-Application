@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:meditationapp/screens/authenticate/sign_in.dart';
 import 'package:meditationapp/services/auth.dart';
 
 
 class Register extends StatefulWidget {
 
-  final Function toggleView;
-  Register({ required this.toggleView });
+  // final Function toggleView;
+  // Register({ required this.toggleView });
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -29,7 +30,7 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.deepPurple,
       ),
 
-      body: Container(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 50),
         child: Form(
           key: _formkey,
@@ -89,6 +90,7 @@ class _RegisterState extends State<Register> {
                   onPressed: () async {
                     if(_formkey.currentState!.validate()){
                       dynamic result = await _auth.regEmailPassword(email, password);
+                      MaterialPageRoute(builder: (context) => LoginScreen());
                       if(result == null) {
                         setState(() {
                           regError = 'Please supply valid credentials';

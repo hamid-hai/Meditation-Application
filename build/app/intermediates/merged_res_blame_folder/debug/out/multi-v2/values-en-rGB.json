@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\c1935888\\OneDrive - Cardiff University\\Documents\\MeditationApp\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
+            "outputFile": "C:\\Users\\c1935888\\StudioProjects\\meditationapp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\c1935888\\.gradle\\caches\\transforms-3\\eec2f797a2bf5c565bc3c9434069417c\\transformed\\jetified-play-services-base-17.1.0\\res\\values-en-rGB\\values.xml",
