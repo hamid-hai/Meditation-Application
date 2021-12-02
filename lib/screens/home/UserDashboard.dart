@@ -20,6 +20,7 @@ Future<Quote> fetchQuote() async {
   }
 }
 
+// REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
 class Quote {
   final String quote;
   final String author;
@@ -43,6 +44,8 @@ class UserDashboard extends StatefulWidget {
 }
 
 class _UserDashboardState extends State<UserDashboard> {
+
+  // REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
   late Future<Quote> futureQuote;
 
   @override
@@ -88,6 +91,7 @@ class _UserDashboardState extends State<UserDashboard> {
         ),
       ),
 
+            // REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
             Container(
               alignment: Alignment.topCenter,
                 padding: const EdgeInsets.only(top: 75),
