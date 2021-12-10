@@ -6,9 +6,6 @@ import 'package:meditationapp/screens/home/features/supportgroups/parentHelpline
 import 'package:meditationapp/screens/home/features/supportgroups/samaritans.dart';
 import 'package:meditationapp/screens/home/features/supportgroups/shout.dart';
 import 'package:meditationapp/screens/home/features/supportgroups/youngMinds.dart';
-import 'package:meditationapp/services/supportGroups.dart';
-import 'package:meditationapp/services/supportGroups.dart';
-import 'package:meditationapp/services/supportGroups.dart';
 
 class SupportPage extends StatefulWidget {
   const SupportPage({Key? key}) : super(key: key);
