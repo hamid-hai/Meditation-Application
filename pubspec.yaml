@@ -44,6 +44,21 @@ dependencies:
   #HTTP dependency to call Daily Quotes from the internet
   http: ^0.13.4
 
+  #Provides intents to other aspects of Android
+  url_launcher: ^6.0.17
+
+  #Google Maps
+  google_maps_flutter: ^2.1.1
+
+#  # For locally stored audio files
+#  audioplayers: ^0.20.1
+#  just_audio: ^0.9.18
+#
+#  #Path Locator
+#  path_provider: ^2.0.7
+
+  flutter_sound_lite: ^8.4.2
+
 
 
 
@@ -80,6 +95,12 @@ flutter:
     - assets/images/userdashboard/delete.png
     - assets/images/userdashboard/mood.png
     - assets/images/userdashboard/support.png
+    - assets/images/supporticons/nhs.jpg
+
+    # Audio
+    - assets/audio/rain.mp3
+
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
