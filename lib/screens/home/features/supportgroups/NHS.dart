@@ -1,10 +1,25 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+const LatLng destMarker = LatLng(51.50721723582364, -3.1912815018219574);
+
 
 class NHS extends StatelessWidget {
-  const NHS({Key? key}) : super(key: key);
+  Set<Marker> _markers = Set<Marker>();
+
+  Completer<GoogleMapController> _controller = Completer();
+
+  late LatLng destinationMarker;
+
+  void setLocationMarkers() {
+    destinationMarker = LatLng(
+      destMarker.latitude,
+      destMarker.longitude
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +37,33 @@ class NHS extends StatelessWidget {
               Image(image: NetworkImage('https://www.mhcc.nhs.uk/wp-content/uploads/2020/04/NHS-blog-banner.png'))
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 5,),
           ListTile(
             title: Text('Who is this service for?'),
             subtitle: Text('Anyone!'),
           ),
           ListTile(
-            title: Text('Nearest Locations'),
-            subtitle: Text('Google Maps Widget'),
+            title: Text('Nearest Location'),
           ),
+
+          // GOOGLE MAPS FUNCTION
+          Container(
+            height: 210,
+            child: GoogleMap(
+              zoomControlsEnabled: false,
+                markers: _markers,
+                onMapCreated: (GoogleMapController controller) {
+                _controller.complete(controller);
+
+                showPinsOnMap();
+
+                },
+                initialCameraPosition: CameraPosition(target: LatLng(51.50721723582364, -3.1912815018219574),
+                zoom: 14.4746)),
+          ),
+
+
+
           ListTile(
             title: Text('How to contact'),
           ),
@@ -82,6 +115,12 @@ class NHS extends StatelessWidget {
         ],
       ),
     );
-    
 }
+
+  void showPinsOnMap() {
+    _markers.add(Marker(
+      markerId: MarkerId('DestinationPin'),
+      position: destinationMarker,
+    ));
+  }
 }
