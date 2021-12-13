@@ -5,14 +5,28 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
-class Samartians extends StatelessWidget {
-  const Samartians({Key? key}) : super(key: key);
+class Samartians extends StatefulWidget {
+
+
+  @override
+  State<Samartians> createState() => _SamartiansState();
+}
+
+class _SamartiansState extends State<Samartians> {
+
+  // MARKER REFERENCE https://www.fluttercampus.com/guide/73/how-to-add-multiple-markers-on-google-map-flutter/
+
+  Set<Marker> _markers = new Set();
+
+  Completer<GoogleMapController> _controller = Completer();
+
+  static const LatLng showLocation = const LatLng(51.48250384258919, -3.235368650542704);
+
+
 
   @override
   Widget build(BuildContext context) {
-    Set<Marker> _markers = Set<Marker>();
 
-    Completer<GoogleMapController> _controller = Completer();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -45,15 +59,18 @@ class Samartians extends StatelessWidget {
           Container(
             height: 125,
             child: GoogleMap(
+                zoomGesturesEnabled: true,
                 zoomControlsEnabled: false,
-                markers: _markers,
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
+                initialCameraPosition: CameraPosition(target: showLocation, zoom: 15),
+
+                markers: this.getmarkers(),
+              onMapCreated: (controller) { //method called when map is created
+                setState(() {
+                  _controller = controller as Completer<GoogleMapController>;
+                });
 
                 },
-                initialCameraPosition: CameraPosition(target: LatLng(51.48250384258919, -3.235368650542704),
-                    zoom: 17)),
-            // https://www.papyrus-uk.org/get-in-touch/
+            ),
           ),
 
 
@@ -92,5 +109,19 @@ class Samartians extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Set<Marker> getmarkers() {
+    setState(() {
+      _markers.add(Marker( //add marker
+        markerId: MarkerId(showLocation.toString()),
+        position: showLocation, //position of marker
+        infoWindow: InfoWindow( //popup info
+          title: 'Samartians Cardiff',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+    });
+    return _markers;
   }
 }

@@ -7,19 +7,20 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 const LatLng destMarker = LatLng(51.50721723582364, -3.1912815018219574);
 
 
-class NHS extends StatelessWidget {
+class NHS extends StatefulWidget {
+  @override
+  State<NHS> createState() => _NHSState();
+}
+
+class _NHSState extends State<NHS> {
+
+  // MARKER REFERENCE https://www.fluttercampus.com/guide/73/how-to-add-multiple-markers-on-google-map-flutter/
   Set<Marker> _markers = Set<Marker>();
 
   Completer<GoogleMapController> _controller = Completer();
 
-  late LatLng destinationMarker;
+  static const LatLng showLocation = const LatLng(51.50721723582364, -3.1912815018219574);
 
-  void setLocationMarkers() {
-    destinationMarker = LatLng(
-      destMarker.latitude,
-      destMarker.longitude
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +52,14 @@ class NHS extends StatelessWidget {
             height: 210,
             child: GoogleMap(
               zoomControlsEnabled: false,
-                markers: _markers,
-                onMapCreated: (GoogleMapController controller) {
-                _controller.complete(controller);
-
-                showPinsOnMap();
+                markers: this.getmarkers(),
+                onMapCreated: (controller) { //method called when map is created
+                  setState(() {
+                    _controller = controller as Completer<GoogleMapController>;
+                  });
 
                 },
-                initialCameraPosition: CameraPosition(target: LatLng(51.50721723582364, -3.1912815018219574),
+                initialCameraPosition: CameraPosition(target: showLocation,
                 zoom: 14.4746)),
           ),
 
@@ -117,10 +118,18 @@ class NHS extends StatelessWidget {
     );
 }
 
-  void showPinsOnMap() {
-    _markers.add(Marker(
-      markerId: MarkerId('DestinationPin'),
-      position: destinationMarker,
-    ));
+  Set<Marker> getmarkers() {
+    setState(() {
+      _markers.add(Marker( //add marker
+        markerId: MarkerId(showLocation.toString()),
+        position: showLocation, //position of marker
+        infoWindow: InfoWindow( //popup info
+          title: 'University Hospital of Wales',
+          snippet: 'NHS Cardiff'
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+    });
+    return _markers;
   }
 }

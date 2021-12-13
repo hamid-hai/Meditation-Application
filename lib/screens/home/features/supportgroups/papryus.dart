@@ -5,14 +5,25 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
-class Papryus extends StatelessWidget {
+class Papryus extends StatefulWidget {
   const Papryus({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    Set<Marker> _markers = Set<Marker>();
+  State<Papryus> createState() => _PapryusState();
+}
 
-    Completer<GoogleMapController> _controller = Completer();
+class _PapryusState extends State<Papryus> {
+
+  // MARKER REFERENCE https://www.fluttercampus.com/guide/73/how-to-add-multiple-markers-on-google-map-flutter/
+
+  Set<Marker> _markers = Set<Marker>();
+
+  Completer<GoogleMapController> _controller = Completer();
+
+  static const LatLng showLocation = const LatLng(51.48281266917645, -3.168127140443014);
+  @override
+  Widget build(BuildContext context) {
+
 
 
     return Scaffold(
@@ -48,13 +59,16 @@ class Papryus extends StatelessWidget {
             height: 210,
             child: GoogleMap(
                 zoomControlsEnabled: false,
-                markers: _markers,
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
+                markers: this.getmarkers(),
+                zoomGesturesEnabled: true,
+                initialCameraPosition: CameraPosition(target: showLocation, zoom: 15),
+                onMapCreated: (controller) { //method called when map is created
+                  setState(() {
+                    _controller = controller as Completer<GoogleMapController>;
+                  });
+                }
+            ),
 
-                },
-                initialCameraPosition: CameraPosition(target: LatLng(51.48281266917645, -3.168127140443014),
-                    zoom: 17)),
             // https://www.papyrus-uk.org/get-in-touch/
           ),
 
@@ -94,5 +108,18 @@ class Papryus extends StatelessWidget {
         ],
       ),
     );
+  }
+  Set<Marker> getmarkers() {
+    setState(() {
+      _markers.add(Marker( //add marker
+        markerId: MarkerId(showLocation.toString()),
+        position: showLocation, //position of marker
+        infoWindow: InfoWindow( //popup info
+          title: 'Papyrus Cardiff',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+    });
+    return _markers;
   }
 }
