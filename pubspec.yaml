@@ -95,7 +95,6 @@ flutter:
     - assets/images/userdashboard/delete.png
     - assets/images/userdashboard/mood.png
     - assets/images/userdashboard/support.png
-    - assets/images/supporticons/nhs.jpg
 
     # Audio
     - assets/audio/rain.mp3
