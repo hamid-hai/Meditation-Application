@@ -32,7 +32,7 @@ class _SupportPageState extends State<SupportPage> {
 
   Widget _myListView(BuildContext context) {
   //
-    final titles = ['NHS', 'Samaritans', 'SHOUT', 'CALM', 'Papryus', 'YoungMinds', 'Parent Helpline'];
+    final titles = ['NHS', 'Samaritans', 'SHOUT', 'CALM', 'Papryus', 'YoungMinds', 'YoungMinds (Parents)'];
   //
     final icons = [Icons.directions_bike, Icons.directions_boat,
       Icons.directions_bus, Icons.directions_car, Icons.directions_railway,
@@ -93,7 +93,7 @@ class _SupportPageState extends State<SupportPage> {
           Card(
             elevation: 2,
             child: ListTile(
-              leading: CircleAvatar(backgroundImage: NetworkImage('https://lh3.googleusercontent.com/proxy/Q_GpIWwrIoUfWCyJqvat716Us4EzD2q06cJX4dGfQx92J3x32x2vvBlX-89RVe04BesBpA_DaIpjKjTgJ5LbvDx18Y2Ozn1mJaETp1QnX6xWf6nrFxz2qmJ3W9eL-g')),
+              leading: CircleAvatar(backgroundImage: NetworkImage('https://www.kirkleeslocaloffer.org.uk/Resources/FileStorage/Products/Events/f642bad8-cfd5-45ea-98b2-abdd00bf6974/4bacccd5-77a8-4414-a320-8800c116d9a5.jpg')),
               title: Text(titles[4]),
               subtitle: Text('Free Under 35s, 9AM-Midnight, 7 Days a week'),
               trailing: const Icon(Icons.arrow_forward),
@@ -117,9 +117,9 @@ class _SupportPageState extends State<SupportPage> {
           Card(
             elevation: 2,
             child: ListTile(
-              leading: CircleAvatar(backgroundImage: NetworkImage('https://pbs.twimg.com/profile_images/1231725674/profilepicno_400x400.jpg')),
+              leading: CircleAvatar(backgroundImage: NetworkImage('https://www.propertymark.co.uk/static/dc6ad9e2-3053-490f-b64137110d482b07/opengraphimage_83f4e8796336604b59d7216d0ecd81a5/Young-Minds-logo.jpg')),
               title: Text(titles[6]),
-              subtitle: Text('Parent Crisis Messaging Service 24/7'),
+              subtitle: Text('Parent Crisis Phone and Live Chat Service 24/7'),
               trailing: const Icon(Icons.arrow_forward),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => parentHelpline()));
