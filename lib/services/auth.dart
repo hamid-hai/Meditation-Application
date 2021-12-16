@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meditationapp/models/myuser.dart';
+import 'package:meditationapp/services/database.dart';
 
 class AuthService {
 
@@ -41,6 +42,9 @@ class AuthService {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
+
+
+      await DatabaseService(uid: user!.uid).updateUserData('name');
       return _userfromFirebase(user!);
     } catch(e) {
       print(e.toString());
