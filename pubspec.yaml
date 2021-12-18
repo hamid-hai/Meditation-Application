@@ -60,6 +60,12 @@ dependencies:
   flutter_sound_lite: ^8.4.2
 
 
+#  Mood Logs graphs and pie charts
+  charts_flutter: ^0.12.0
+  pie_chart: ^5.1.0
+  sqflite: ^2.0.1
+  path_provider: ^2.0.8
+
 
 
   # Provider will help determine if a user is signed in and switch the screens depending on the case
@@ -95,6 +101,11 @@ flutter:
     - assets/images/userdashboard/delete.png
     - assets/images/userdashboard/mood.png
     - assets/images/userdashboard/support.png
+    - assets/images/moodimages/sad.png
+    - assets/images/moodimages/nuteral.png
+    - assets/images/moodimages/mediumsad.png
+    - assets/images/moodimages/mediumhappy.png
+    - assets/images/moodimages/veryhappy.png
 
     # Audio
     - assets/audio/rain.mp3
