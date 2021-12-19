@@ -142,20 +142,29 @@ class _MoodsLogsState extends State<MoodsLogs> {
             ),
             TextButton.icon(
                 icon: Icon(Icons.send), label: Text('Submit'),
-              onPressed: () async => {
-              setState(() {
+              onPressed: () async {
+
+
+              // setState(() {
                 User? user = FirebaseAuth.instance.currentUser;
 
-                FirebaseFirestore.instance.runTransaction((transaction) async {
-                  await transaction.set(FirebaseFirestore.instance.collection(
-                      'diaries').doc(user!.uid), {
-                    'dateandtime': datetime,
-                    'mood': mood
-                  });
-                });
-
-
-              }),
+                await FirebaseFirestore.instance.collection('diaries').add(
+                    {
+                      'uid': user!.uid,
+                      'dateandtime': datepicked,
+                      'mood': mood
+                    });
+              //
+              //   FirebaseFirestore.instance.runTransaction((transaction) async {
+              //     await transaction.set(FirebaseFirestore.instance.collection(
+              //         'diaries').doc(user!.uid), {
+              //       'dateandtime': datetime,
+              //       'mood': mood
+              //     });
+              //   });
+              //
+              //
+              // }),
             },
             )
           ]),
