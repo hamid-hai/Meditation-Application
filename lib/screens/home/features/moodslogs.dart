@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/home/features/moodlogs/mood.dart';
+import 'package:meditationapp/screens/home/features/moodlogs/moodhistory.dart';
 import 'package:meditationapp/services/database.dart';
 import 'package:provider/provider.dart';
 
@@ -24,6 +25,7 @@ class _MoodsLogsState extends State<MoodsLogs> {
   late int currentindex;
   late String dateonly;
   int ontapcount = 0;
+  late DateTime datesorter;
 
   List<Mood> moods = [
     Mood('assets/images/moodimages/sad.png', 'Sad', false),
@@ -60,6 +62,7 @@ class _MoodsLogsState extends State<MoodsLogs> {
                         lastDate: DateTime(2022))
                         .then((date) => {
                       setState(() {
+                        datesorter = date!;
                         datepicked = date!.day.toString() +
                             '-' +
                             date.month.toString() +
@@ -151,7 +154,8 @@ class _MoodsLogsState extends State<MoodsLogs> {
                 await FirebaseFirestore.instance.collection('diaries').add(
                     {
                       'uid': user!.uid,
-                      'dateandtime': datepicked,
+                      'dateandtime': datetime,
+                      'date': datesorter,
                       'mood': mood
                     });
               //
@@ -166,7 +170,13 @@ class _MoodsLogsState extends State<MoodsLogs> {
               //
               // }),
             },
-            )
+            ),
+            TextButton.icon(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => moodHistory()));
+                },
+                icon: Icon(Icons.table_rows_rounded),
+                label: Text('Go to Mood Logs History')),
           ]),
 
       ),
