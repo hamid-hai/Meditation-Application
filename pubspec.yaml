@@ -44,20 +44,16 @@ dependencies:
   #HTTP dependency to call Daily Quotes from the internet
   http: ^0.13.4
 
+  #Audioplayer dependecy for creating player for the soundboard
+#  audioplayer: ^0.8.1
+  audioplayers: ^0.20.1
+
+=======
   #Provides intents to other aspects of Android
   url_launcher: ^6.0.17
 
   #Google Maps
   google_maps_flutter: ^2.1.1
-
-#  # For locally stored audio files
-#  audioplayers: ^0.20.1
-#  just_audio: ^0.9.18
-#
-#  #Path Locator
-#  path_provider: ^2.0.7
-
-  flutter_sound_lite: ^8.4.2
 
 
 #  Mood Logs graphs and pie charts
@@ -101,6 +97,7 @@ flutter:
     - assets/images/userdashboard/delete.png
     - assets/images/userdashboard/mood.png
     - assets/images/userdashboard/support.png
+
     - assets/images/moodimages/sad.png
     - assets/images/moodimages/nuteral.png
     - assets/images/moodimages/mediumsad.png
@@ -111,6 +108,7 @@ flutter:
 #    - assets/audio/rain.mp3
 
 
+>>>>>>> pubspec.yaml
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
