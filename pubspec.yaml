@@ -48,6 +48,19 @@ dependencies:
 #  audioplayer: ^0.8.1
   audioplayers: ^0.20.1
 
+=======
+  #Provides intents to other aspects of Android
+  url_launcher: ^6.0.17
+
+  #Google Maps
+  google_maps_flutter: ^2.1.1
+
+
+#  Mood Logs graphs and pie charts
+  charts_flutter: ^0.12.0
+  pie_chart: ^5.1.0
+  sqflite: ^2.0.1
+  path_provider: ^2.0.8
 
 
 
@@ -84,7 +97,18 @@ flutter:
     - assets/images/userdashboard/delete.png
     - assets/images/userdashboard/mood.png
     - assets/images/userdashboard/support.png
-    - assets/audio/ambient/rain.mp3
+
+    - assets/images/moodimages/sad.png
+    - assets/images/moodimages/nuteral.png
+    - assets/images/moodimages/mediumsad.png
+    - assets/images/moodimages/mediumhappy.png
+    - assets/images/moodimages/veryhappy.png
+
+    # Audio
+#    - assets/audio/rain.mp3
+
+
+>>>>>>> pubspec.yaml
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
