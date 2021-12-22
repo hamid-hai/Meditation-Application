@@ -6,7 +6,7 @@ import 'package:meditationapp/screens/home/features/moodlogs/moodhistory.dart';
 import 'package:meditationapp/services/database.dart';
 import 'package:provider/provider.dart';
 
-import '../moodicon.dart';
+import 'moodlogs/moodicon.dart';
 
 class MoodsLogs extends StatefulWidget {
   const MoodsLogs({Key? key}) : super(key: key);
