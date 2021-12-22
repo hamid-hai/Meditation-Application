@@ -48,7 +48,6 @@ dependencies:
 #  audioplayer: ^0.8.1
   audioplayers: ^0.20.1
 
-=======
   #Provides intents to other aspects of Android
   url_launcher: ^6.0.17
 
@@ -104,11 +103,7 @@ flutter:
     - assets/images/moodimages/mediumhappy.png
     - assets/images/moodimages/veryhappy.png
 
-    # Audio
-#    - assets/audio/rain.mp3
 
-
->>>>>>> pubspec.yaml
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
