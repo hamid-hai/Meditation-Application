@@ -1,16 +1,45 @@
-# meditationapp
+# The Meditation App
 
-A new Flutter project.
+The Meditation App is a clean, easy to use app, which is designed to help users keep track of how they're feeling during different days and listent to a range of calming, relaxing sounds.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Features
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Secure login using Firebase
+- Ability to store and view records on moods with Date and Time
+- Listen to a range of relaxing ambient sounds
+- Learn and contact different support organisations within the UK
+
+
+## Tech Stack
+
+**Client:** Dart
+
+**Server:** Firebase
+
+
+## Installation
+
+Clone the repo using HTML
+
+Run in command line or within an editior (Android Studio / Visual Studio Code)
+
+```bash
+  flutter pub get
+```
+
+Open an Android Emulator SDK Version 21 (Lolipop) or above.
+
+Click run within your chosen editor.
+    
+## Screenshots
+
+![App Screenshot](https://i.imgur.com/tw5lfQR.png)
+
+![App Screenshot](https://imgur.com/sJBlcBe.png)
+
+![App Screenshot](https://imgur.com/XhhpQFd.png)
+
+![App Screenshot](https://imgur.com/HvaKWh2.png)
