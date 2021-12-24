@@ -25,7 +25,18 @@ class MyApp extends StatelessWidget {
       catchError: (_, __) => null,
       value: AuthService().user,
       child: MaterialApp(
-        // theme: ThemeData.dark(),
+        // REFERENCE https://stackoverflow.com/a/62607827
+        // Dark mode now follows system settings
+        // Requires Android 10 (API level 29) or above to switch to dark mode
+        theme: ThemeData(
+          brightness: Brightness.light,
+          /* light theme settings */
+        ),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          /* dark theme settings */
+        ),
+        themeMode: ThemeMode.system,
         home: Wrapper(),
       ),
     );
