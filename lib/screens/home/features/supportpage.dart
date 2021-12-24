@@ -21,7 +21,6 @@ class _SupportPageState extends State<SupportPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Extra Support"),
         backgroundColor: Colors.deepPurple,

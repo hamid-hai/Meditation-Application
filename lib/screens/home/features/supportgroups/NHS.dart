@@ -25,7 +25,6 @@ class _NHSState extends State<NHS> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("NHS"),
         backgroundColor: Colors.deepPurple,

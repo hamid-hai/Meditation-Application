@@ -79,7 +79,7 @@ class _UserDashboardState extends State<UserDashboard> {
               child: Center(
                 child: Text(
                   'Welcome to your dashboard!',
-                  style: TextStyle(color: Colors.black, fontSize: 25),
+                  style: TextStyle(fontSize: 25),
                   textAlign: TextAlign.center,
                 ),
               ),

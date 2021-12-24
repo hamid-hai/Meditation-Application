@@ -35,7 +35,6 @@ class _MoodsLogsState extends State<MoodsLogs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Mood Logs"),
         backgroundColor: Colors.deepPurple,
