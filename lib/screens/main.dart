@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       catchError: (_, __) => null,
       value: AuthService().user,
       child: MaterialApp(
+        // theme: ThemeData.dark(),
         home: Wrapper(),
       ),
     );
