@@ -53,15 +53,7 @@ dependencies:
 
   #Google Maps
   google_maps_flutter: ^2.1.1
-
-
-#  Mood Logs graphs and pie charts
-  charts_flutter: ^0.12.0
-  pie_chart: ^5.1.0
-  sqflite: ^2.0.1
   path_provider: ^2.0.8
-
-
 
   # Provider will help determine if a user is signed in and switch the screens depending on the case
   # Google provided solution
