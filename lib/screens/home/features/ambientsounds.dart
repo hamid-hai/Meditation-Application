@@ -28,14 +28,25 @@ class _SoundsState extends State<Sounds> {
       body: Stack(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(top: 150, left: 10, right: 10),
+            padding: const EdgeInsets.only(top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Tap to play an amibent sound\nTap again to pause', textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+
+              ],
+            ),
+          ),
+
+
+          Padding(
+            padding: const EdgeInsets.only(top: 70, left: 10, right: 10),
             child: GridView.count(
               mainAxisSpacing: 10,
               crossAxisCount: 2,
-              primary: false,
+              primary: true,
               children: <Widget>[
-
-
                 Card(
                   elevation: 4,
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
@@ -54,8 +65,8 @@ class _SoundsState extends State<Sounds> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset(
-                            'assets/images/userdashboard/audiowaves.png',
+                        Image.network(
+                            'https://cdn.iconscout.com/icon/free/png-256/cloud-rain-1895139-1605055.png',
                             height: 100),
                         Text('Rain')
                       ],
@@ -83,8 +94,8 @@ class _SoundsState extends State<Sounds> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset(
-                            'assets/images/userdashboard/audiowaves.png',
+                        Image.network(
+                            'https://icon-library.com/images/air-element-icon/air-element-icon-8.jpg',
                             height: 100),
                         Text('Beach Waves')
                       ],
@@ -112,8 +123,8 @@ class _SoundsState extends State<Sounds> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset(
-                            'assets/images/userdashboard/audiowaves.png',
+                        Image.network(
+                            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/BSicon_TRAIN2.svg/1024px-BSicon_TRAIN2.svg.png',
                             height: 100),
                         Text('Subway')
                       ],
@@ -141,10 +152,64 @@ class _SoundsState extends State<Sounds> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset(
-                            'assets/images/userdashboard/audiowaves.png',
+                        Image.network(
+                            'https://cdn-icons-png.flaticon.com/512/699/699421.png',
                             height: 100),
                         Text('City')
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 4,
+                  // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
+                  child: InkWell(
+                    onTap: () {
+                      print('Fire tapped');
+                      getAudio(
+                          'https://cdn.staticcrate.com/stock-hd/audio/soundscrate-fire.mp3');
+                    },
+                    onLongPress: () {
+                      print('fire long tapped');
+                      // REFERENCE https://stackoverflow.com/a/45948243
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("A relaxing fire sound"),
+                      ));
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image.network(
+                            'http://simpleicon.com/wp-content/uploads/fire-256x256.png',
+                            height: 100),
+                        Text('Fire')
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  elevation: 4,
+                  // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
+                  child: InkWell(
+                    onTap: () {
+                      print('Forest tapped');
+                      getAudio(
+                          'https://cdn.staticcrate.com/stock-hd/audio/soundscrate-forest-ambient.mp3');
+                    },
+                    onLongPress: () {
+                      print('forest long tapped');
+                      // REFERENCE https://stackoverflow.com/a/45948243
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("A relaxing forest sound"),
+                      ));
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image.network(
+                            'https://www.pngfind.com/pngs/m/127-1272126_christmas-trees-comments-forest-icon-png-black-and.png',
+                            height: 100),
+                        Text('Forest')
                       ],
                     ),
                   ),
