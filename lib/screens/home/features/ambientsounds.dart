@@ -31,7 +31,7 @@ class _SoundsState extends State<Sounds> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Tap to play an amibent sound\nTap again to pause', textAlign: TextAlign.center,
+                Text('Tap to play an amibent sound\nTap again to pause\n(An internet connection is required)', textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
 
               ],
@@ -40,7 +40,7 @@ class _SoundsState extends State<Sounds> {
 
 
           Padding(
-            padding: const EdgeInsets.only(top: 70, left: 10, right: 10),
+            padding: const EdgeInsets.only(top: 100, left: 10, right: 10),
             child: GridView.count(
               mainAxisSpacing: 10,
               crossAxisCount: 2,
