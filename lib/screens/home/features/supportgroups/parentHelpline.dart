@@ -15,7 +15,6 @@ class parentHelpline extends StatelessWidget {
     Completer<GoogleMapController> _controller = Completer();
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Parent Helpline (Young Minds)"),
         backgroundColor: Colors.deepPurple,

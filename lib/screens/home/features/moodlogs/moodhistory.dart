@@ -25,7 +25,6 @@ class _moodHistoryState extends State<moodHistory> {
     final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance.collection('diaries').where('uid', isEqualTo: user!.uid).snapshots(includeMetadataChanges: true);
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Mood History"),
         backgroundColor: Colors.deepPurple,

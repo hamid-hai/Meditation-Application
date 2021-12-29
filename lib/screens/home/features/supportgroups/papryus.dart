@@ -27,7 +27,6 @@ class _PapryusState extends State<Papryus> {
 
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Papyrus"),
         backgroundColor: Colors.deepPurple,

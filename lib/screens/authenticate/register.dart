@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/authenticate/sign_in.dart';
+import 'package:meditationapp/screens/home/UserDashboard.dart';
 import 'package:meditationapp/services/auth.dart';
 
 
@@ -90,7 +91,8 @@ class _RegisterState extends State<Register> {
                   onPressed: () async {
                     if(_formkey.currentState!.validate()){
                       dynamic result = await _auth.regEmailPassword(email, password);
-                      MaterialPageRoute(builder: (context) => LoginScreen());
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => UserDashboard())
+                      );
                       if(result == null) {
                         setState(() {
                           regError = 'Please supply valid credentials';

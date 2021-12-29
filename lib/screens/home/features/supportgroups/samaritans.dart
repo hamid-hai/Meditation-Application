@@ -29,7 +29,6 @@ class _SamartiansState extends State<Samartians> {
 
 
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Samartians"),
         backgroundColor: Colors.deepPurple,
