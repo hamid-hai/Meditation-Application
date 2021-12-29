@@ -40,7 +40,8 @@ class _NHSState extends State<NHS> {
           SizedBox(height: 5,),
           ListTile(
             title: Text('Who is this service for?'),
-            subtitle: Text('Anyone!'),
+            subtitle: Text('NHS Services are free for anyone suffering with any mental health conditons within the UK.'
+                ' Services such as therapists and quizes can help aid during stressful times.'),
           ),
           ListTile(
             title: Text('Nearest Location'),
