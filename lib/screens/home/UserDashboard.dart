@@ -4,10 +4,6 @@ import 'package:meditationapp/screens/home/features/ambientsounds.dart';
 import 'package:meditationapp/screens/home/features/moodslogs.dart';
 import 'package:meditationapp/screens/home/features/supportpage.dart';
 import 'package:meditationapp/services/auth.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-
-import 'features/removalads.dart';
 
 class UserDashboard extends StatefulWidget {
   @override
@@ -31,12 +27,6 @@ Future<String>getQuoteDio() async {
     Map firstFilter = result['contents']['quotes'][0];
     String quoteRead = firstFilter["quote"].toString();
     return quoteRead;
-    // return firstFilter["quote"];
-    // String firstFilterToString = firstFilter.toString();
-    // String finalResult = firstFilterToString.substring(7, firstFilterToString.indexOf(','));
-    // List finalResult = firstFilterToString.split('\n').toList();
-    // print(firstFilter["quote"]);
-    // print(firstFilter["author"]);
   }
 
 Future<String>getAuthorDio() async {
@@ -231,12 +221,4 @@ void initState() {
           ],
         ));
   }
-}
-
-class QuoteAPI {
-
-  final String quotation;
-
-  QuoteAPI(this.quotation);
-
 }
