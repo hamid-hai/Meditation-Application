@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/home/features/ambientsounds.dart';
 import 'package:meditationapp/screens/home/features/moodslogs.dart';
@@ -8,46 +9,40 @@ import 'dart:convert';
 
 import 'features/removalads.dart';
 
-Future<Quote> fetchQuote() async {
-  final response =
-      await http.get(Uri.parse('http://quotes.rest/qod.json?category=inspire'));
-
-  if (response.statusCode == 200) {
-    return Quote.fromJson(jsonDecode(response.body));
-  } else {
-    throw Exception('Failed to load Quote of the Day');
-  }
-}
-
-// REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
-class Quote {
-  final String quote;
-  final String author;
-
-  Quote({
-    required this.quote,
-    required this.author,
-  });
-
-  factory Quote.fromJson(Map<String, dynamic> json) {
-    return Quote(quote: json['quote'], author: json['author']);
-  }
-}
-
 class UserDashboard extends StatefulWidget {
   @override
   _UserDashboardState createState() => _UserDashboardState();
 }
 
 class _UserDashboardState extends State<UserDashboard> {
-  // REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
-  late Future<Quote> futureQuote;
 
-  @override
-  void initState() {
-    super.initState();
-    futureQuote = fetchQuote();
+
+// REFERENCE
+//https://pub.dev/packages/dio
+//https://stackoverflow.com/a/63975576
+//https://stackoverflow.com/a/53837179
+
+late Future<String>finalQuote;
+
+Future<String>getQuoteDio() async {
+    Response response = await Dio().get("http://quotes.rest/qod.json?category=inspire");
+    Map result = response.data;
+    Map firstFilter = result['contents']['quotes'][0];
+    String quoteRead = firstFilter["quote"].toString();
+    return quoteRead;
+    // return firstFilter["quote"];
+    // String firstFilterToString = firstFilter.toString();
+    // String finalResult = firstFilterToString.substring(7, firstFilterToString.indexOf(','));
+    // List finalResult = firstFilterToString.split('\n').toList();
+    // print(firstFilter["quote"]);
+    // print(firstFilter["author"]);
   }
+
+@override
+void initState() {
+  finalQuote = getQuoteDio();
+}
+
 
   String url = 'http://quotes.rest/qod.json?category=inspire';
 
@@ -88,18 +83,24 @@ class _UserDashboardState extends State<UserDashboard> {
             // REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
             Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.only(top: 75),
-              child: FutureBuilder<Quote>(
-                  future: futureQuote,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return Text('${snapshot.data!.quote}');
-                    } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
-                    }
-
-                    return const CircularProgressIndicator();
-                  }),
+              padding: const EdgeInsets.only(top: 55),
+              // child: Text(finalQuote.toString()),
+              child: FutureBuilder<String>(
+                future: finalQuote,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    // REFERENCE
+                    // https://stackoverflow.com/a/68429051
+                    return Text(snapshot.data ?? 'Cannot load quote', textAlign: TextAlign.center);
+                  } if (snapshot.hasError) {
+                    return Text('Something went wrong\n\nPlease check your internet connection', textAlign: TextAlign.center);
+                  } if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  } else {
+                    return Text('Unknown Error, please check your internet connection');
+                  }
+                },
+              )
             ),
 
             Padding(
@@ -188,4 +189,12 @@ class _UserDashboardState extends State<UserDashboard> {
           ],
         ));
   }
+}
+
+class QuoteAPI {
+
+  final String quotation;
+
+  QuoteAPI(this.quotation);
+
 }
