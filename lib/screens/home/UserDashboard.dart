@@ -1,38 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/home/features/ambientsounds.dart';
 import 'package:meditationapp/screens/home/features/moodslogs.dart';
 import 'package:meditationapp/screens/home/features/supportpage.dart';
 import 'package:meditationapp/services/auth.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-
-import 'features/removalads.dart';
-
-Future<Quote> fetchQuote() async {
-  final response =
-      await http.get(Uri.parse('http://quotes.rest/qod.json?category=inspire'));
-
-  if (response.statusCode == 200) {
-    return Quote.fromJson(jsonDecode(response.body));
-  } else {
-    throw Exception('Failed to load Quote of the Day');
-  }
-}
-
-// REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
-class Quote {
-  final String quote;
-  final String author;
-
-  Quote({
-    required this.quote,
-    required this.author,
-  });
-
-  factory Quote.fromJson(Map<String, dynamic> json) {
-    return Quote(quote: json['quote'], author: json['author']);
-  }
-}
 
 class UserDashboard extends StatefulWidget {
   @override
@@ -40,16 +11,37 @@ class UserDashboard extends StatefulWidget {
 }
 
 class _UserDashboardState extends State<UserDashboard> {
-  // REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
-  late Future<Quote> futureQuote;
 
-  @override
-  void initState() {
-    super.initState();
-    futureQuote = fetchQuote();
+
+// REFERENCE
+//https://pub.dev/packages/dio
+//https://stackoverflow.com/a/63975576
+//https://stackoverflow.com/a/53837179
+
+late Future<String>finalQuote;
+late Future<String>finalAuthor;
+
+Future<String>getQuoteDio() async {
+    Response response = await Dio().get("http://quotes.rest/qod.json?category=inspire");
+    Map result = response.data;
+    Map firstFilter = result['contents']['quotes'][0];
+    String quoteRead = firstFilter["quote"].toString();
+    return quoteRead;
   }
 
-  String url = 'http://quotes.rest/qod.json?category=inspire';
+Future<String>getAuthorDio() async {
+  Response response = await Dio().get("http://quotes.rest/qod.json?category=inspire");
+  Map result = response.data;
+  Map firstFilter = result['contents']['quotes'][0];
+  String authorRead = firstFilter["author"].toString();
+  return authorRead;
+}
+
+@override
+void initState() {
+  finalQuote = getQuoteDio();
+  finalAuthor = getAuthorDio();
+}
 
   final AuthService _auth = AuthService();
 
@@ -85,21 +77,62 @@ class _UserDashboardState extends State<UserDashboard> {
               ),
             ),
 
-            // REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
+            Container(
+              height: 125,
+              child: Center(
+                child: Text(
+                  'Quote of the day',
+                  style: TextStyle(fontSize: 25),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+
+
+
+
             Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.only(top: 75),
-              child: FutureBuilder<Quote>(
-                  future: futureQuote,
+              padding: const EdgeInsets.only(top: 85),
+              // child: Text(finalQuote.toString()),
+              child: FutureBuilder<String>(
+                future: finalQuote,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    // REFERENCE
+                    // https://stackoverflow.com/a/68429051
+                    return Text(snapshot.data ?? 'Cannot load quote', textAlign: TextAlign.center);
+                  } if (snapshot.hasError) {
+                    return Text('Something went wrong\n\nPlease check your internet connection', textAlign: TextAlign.center);
+                  } if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator();
+                  } else {
+                    return Text('Unknown Error, please check your internet connection');
+                  }
+                },
+              )
+            ),
+
+            Container(
+                alignment: Alignment.topCenter,
+                padding: const EdgeInsets.only(top: 125),
+                // child: Text(finalQuote.toString()),
+                child: FutureBuilder<String>(
+                  future: finalAuthor,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return Text('${snapshot.data!.quote}');
-                    } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
+                      // REFERENCE
+                      // https://stackoverflow.com/a/68429051
+                      return Text(snapshot.data ?? 'Cannot load author', textAlign: TextAlign.center);
+                    } if (snapshot.hasError) {
+                      return Text('Something went wrong\n\nPlease check your internet connection', textAlign: TextAlign.center);
+                    } if (snapshot.connectionState == ConnectionState.waiting) {
+                      return CircularProgressIndicator();
+                    } else {
+                      return Text('Unknown Error, please check your internet connection');
                     }
-
-                    return const CircularProgressIndicator();
-                  }),
+                  },
+                )
             ),
 
             Padding(

@@ -43,6 +43,8 @@ dependencies:
 
   #HTTP dependency to call Daily Quotes from the internet
   http: ^0.13.4
+  #DIO is an alternative to HTTP
+  dio: ^4.0.4
 
   #Audioplayer dependecy for creating player for the soundboard
 #  audioplayer: ^0.8.1
