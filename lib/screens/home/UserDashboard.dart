@@ -23,6 +23,7 @@ class _UserDashboardState extends State<UserDashboard> {
 //https://stackoverflow.com/a/53837179
 
 late Future<String>finalQuote;
+late Future<String>finalAuthor;
 
 Future<String>getQuoteDio() async {
     Response response = await Dio().get("http://quotes.rest/qod.json?category=inspire");
@@ -38,13 +39,19 @@ Future<String>getQuoteDio() async {
     // print(firstFilter["author"]);
   }
 
+Future<String>getAuthorDio() async {
+  Response response = await Dio().get("http://quotes.rest/qod.json?category=inspire");
+  Map result = response.data;
+  Map firstFilter = result['contents']['quotes'][0];
+  String authorRead = firstFilter["author"].toString();
+  return authorRead;
+}
+
 @override
 void initState() {
   finalQuote = getQuoteDio();
+  finalAuthor = getAuthorDio();
 }
-
-
-  String url = 'http://quotes.rest/qod.json?category=inspire';
 
   final AuthService _auth = AuthService();
 
@@ -80,10 +87,23 @@ void initState() {
               ),
             ),
 
-            // REFERENCE https://docs.flutter.dev/cookbook/networking/fetch-data
+            Container(
+              height: 125,
+              child: Center(
+                child: Text(
+                  'Quote of the day',
+                  style: TextStyle(fontSize: 25),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+
+
+
+
             Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.only(top: 55),
+              padding: const EdgeInsets.only(top: 85),
               // child: Text(finalQuote.toString()),
               child: FutureBuilder<String>(
                 future: finalQuote,
@@ -101,6 +121,28 @@ void initState() {
                   }
                 },
               )
+            ),
+
+            Container(
+                alignment: Alignment.topCenter,
+                padding: const EdgeInsets.only(top: 125),
+                // child: Text(finalQuote.toString()),
+                child: FutureBuilder<String>(
+                  future: finalAuthor,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      // REFERENCE
+                      // https://stackoverflow.com/a/68429051
+                      return Text(snapshot.data ?? 'Cannot load author', textAlign: TextAlign.center);
+                    } if (snapshot.hasError) {
+                      return Text('Something went wrong\n\nPlease check your internet connection', textAlign: TextAlign.center);
+                    } if (snapshot.connectionState == ConnectionState.waiting) {
+                      return CircularProgressIndicator();
+                    } else {
+                      return Text('Unknown Error, please check your internet connection');
+                    }
+                  },
+                )
             ),
 
             Padding(
