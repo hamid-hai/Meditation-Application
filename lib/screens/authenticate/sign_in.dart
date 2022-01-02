@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/authenticate/register.dart';
 import 'package:meditationapp/screens/shared/loading.dart';
-
 import 'package:meditationapp/services/auth.dart';
-import '../home/user_dashboard.dart';
 
 // REFERENCE FOR NULL SAFETY ERROR
 // https://stackoverflow.com/a/68322295
@@ -23,6 +21,8 @@ class PasswordFieldValidatorSignIn {
 
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
 
   // final Function toggleView;
   // LoginScreen({ required this.toggleView });
@@ -46,10 +46,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return loading ? LoadingWidget() : Scaffold(
+    return loading ? const LoadingWidget() : Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("The Meditiation App"),
+        title: const Text("The Meditation App"),
         backgroundColor: Colors.deepPurple,
       ),
 
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 30.0),
               child: Center(
-                child: Container(
+                child: SizedBox(
                     width: 200,
                     height: 150,
                     /*decoration: BoxDecoration(
@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
                 validator: EmailFieldValidatorSignIn.validate,
                 onChanged: (val) {
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     email = val;
                   });
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
                     hintText: 'Enter valid email'),
@@ -100,15 +100,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   });
                   },
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter password'),
               ),
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(
+            const Padding(
+              padding: EdgeInsets.only(
                 top: 15
               ),
             ),
@@ -133,43 +133,41 @@ class _LoginScreenState extends State<LoginScreen> {
                         loading = false;
                       });
                     }
-                    print('valid');
                   }
                 },
-                child: Text(
+                child: const Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
             ),
 
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             Text(
               regError,
-              style: TextStyle(color: Colors.red, fontSize: 14.0),
+              style: const TextStyle(color: Colors.red, fontSize: 14.0),
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(
+            const Padding(
+              padding: EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 130,
             ),
 
             // Changing from Text to TextButton allows actions to be performed on the text with a transparent window being added.
             // Reference https://stackoverflow.com/a/66580557
             TextButton(
-              key: Key('registerTextButton'),
+              key: const Key('registerTextButton'),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Register()));
+                  MaterialPageRoute(builder: (context) => const Register()));
               },
-              child: Text(
+              child: const Text(
                 'New User? Create Account',
-              // Try to set text thickness to normal
               style: TextStyle(fontSize: 20, color: Colors.black, fontStyle: FontStyle.normal),
               ),
             ),
