@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meditationapp/screens/authenticate/sign_in.dart';
 import 'package:meditationapp/screens/home/user_dashboard.dart';
 import 'package:meditationapp/services/auth.dart';
 
@@ -16,6 +15,8 @@ class PasswordFieldValidatorRegister {
 }
 
 class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
+
 
   // final Function toggleView;
   // Register({ required this.toggleView });
