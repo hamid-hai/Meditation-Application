@@ -116,7 +116,7 @@ class _UserDashboardState extends State<UserDashboard> {
                 )),
             Container(
                 alignment: Alignment.topCenter,
-                padding: const EdgeInsets.only(top: 125),
+                padding: const EdgeInsets.only(top: 160),
                 // child: Text(finalQuote.toString()),
                 child: FutureBuilder<String>(
                   future: finalAuthor,
@@ -129,19 +129,19 @@ class _UserDashboardState extends State<UserDashboard> {
                     }
                     if (snapshot.hasError) {
                       return const Text(
-                          'Something went wrong\n\nPlease check your internet connection',
+                          '',
                           textAlign: TextAlign.center);
                     }
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const CircularProgressIndicator();
                     } else {
                       return const Text(
-                          'Unknown Error, please check your internet connection');
+                          '');
                     }
                   },
                 )),
             Padding(
-              padding: const EdgeInsets.only(top: 150, left: 10, right: 10),
+              padding: const EdgeInsets.only(top: 200, left: 10, right: 10),
               child: GridView.count(
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
