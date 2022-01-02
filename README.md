@@ -1,6 +1,7 @@
-# The Meditation App
 
-The Meditation App is a clean, easy to use app, which is designed to help users keep track of how they're feeling during different days and listent to a range of calming, relaxing sounds.
+# The Meditation App - Android
+
+The Meditation App is a clean, easy to use Android app, which is designed to help users keep track of how they're feeling during different days and have the ability to listen to a range of calming, relaxing sounds.
 
 
 
@@ -15,31 +16,128 @@ The Meditation App is a clean, easy to use app, which is designed to help users 
 
 ## Tech Stack
 
-**Client:** Dart
+### Front-end
+- [Dart](https://dart.dev/) - A language created by Google that is easy to pickup and learn with many handy
+  features that make coding for Android and iOS easy. Used due to the fact that it is bundled with the Flutter Framework.
+- [Flutter](https://flutter.dev/) - A Framework created by Google created with Dart that allows the app development process with UI building tools to come from a single codebase for Android and iOS.
+  Using Flutter allows for quick UI building within an app that would take much longer with the standard languages used for Android and iOS whilist building for both platforms.
 
-**Server:** Firebase
+### Back-end
 
+- [Firebase Authentication](https://firebase.google.com/docs/auth) - Using Firebase Authentication meant that it was very easy and secure to implement sign in and can implent other sign-in methods in the future all from firebase. I can see who has signed up and all infomation is stored securly on Google Cloud servers.
+- [Firebase Firestore](https://firebase.google.com/docs/firestore) - This is the NoSQL Database provided by Firebase, it is used to store the mood log data of signed in users. Data is secure as it is all stored with random ID's to prevent anyone from finding out who is submitting each document and is stored on Google Cloud Servers. Implementation is much easier than a standard SQL database, lightens the app size and provides a cloud backup of data.
+
+### Libaries / Dependencies
+
+- [firebase_auth](https://pub.dev/packages/firebase_auth) - Provides Firebase Authentication functionaility to Flutter.
+- [cloud_firestore](https://pub.dev/packages/cloud_firestore) - Provides Firebase Firestore functionaility to Flutter.
+- [dio](https://pub.dev/packages/dio) - Dio is a smart HTTP caller for Flutter, it was used to call the Daily Quote API on the User Dashboard.
+- [audioplayers](https://pub.dev/packages/audioplayers) - Used to play network audio files on the Ambient Noises screen.
+- [url_launcher](https://pub.dev/packages/url_launcher) - Used to provide quick access to resources on support pages such as numbers and websites.
+- [google_maps_flutter](https://pub.dev/packages/google_maps_flutter) - Google Maps implentation within Support Pages showing where local services.
+- [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) - Used to provide loading animaitons when the user is waiting for a task to complete.
+- [provider](https://pub.dev/packages/provider) - Is used to determine what screen to show depending on the sign-in state of a user.
+
+
+
+
+## Requirements
+
+### Functional requirements
+-	Contain a map view with pinpoints of local meditation centres, and hospitals nearby.
+-	Contains a list of resources with different contact methods for users and contain a description of what the said resources are for. - MVP
+-	A way of logging in and keeping a mood log of how you have been feeling over the days - MVP
+-	A way of looking back on days to see how you are feeling on the said day
+-	Have the ability to play audio containing a range of ambient sounds such as rain, wind and storms and have the ability for the sounds to be played in the background. - MVP
+-	The app should utilise a mapping platform to display businesses and companies that could benefit the user.
+-	Ability for the user to create a new account using a signup form using a name, email and password and have it logged within an external cloud database. - MVP
+-	Ability for a user to login using credentials to their own dashboard. - MVP
+-	External Resources should have links to website, SMS and phone calls if needed quickly. - MVP
+### Non-functional requirements
+- The app needs to have a clean and simple layout to ensure that there are no complicated designs within the app preventing the user from meeting their needs. - MVP
+-	Security must be held to a high standard with sensitive data being stored within the application regarding mood boards.
+-	The app should contain four sections once signed in (Ambient Sounds, Mood Board, Extra Support and Advert removal). - MVP
+-	The app should have a small response time between requests through the server and the app to ensure the user is not waiting long periods of time after sending data requests to the server (e.g. send a mood report). - MVP
+-	The app should have a 99% uptime to ensure the user is almost always able to access the app at any time as long as they have an internet connection (login, form submission). - MVP
+-	The app should be able to handle multiple requests at one given time which ensures that the app is scalable to a certain extent. - MVP
+-	The app needs to have a high level of accessibility ensuring that on-screen dialogue is readable by a screen reader (Voiceover/Talkback).
+### Data requirements
+-	A cloud-based database to manage large amounts of data without taking up storage on the device – MVP
+-	A table within the database containing user personal information such as Name, DOB, Email and Postcode
+-	A table containing login information such as username/email and a password - MVP
+-	A table containing local centres and their information such as locations and phone numbers - MVP
+-	A table containing mood logs for a user which can be looked backed on - MVP
 
 ## Installation
 
-Clone the repo using HTML
+### Dart / Flutter
 
-Run in command line or within an editior (Android Studio / Visual Studio Code)
+Dart as a language comes bundled with the Flutter SDK. This means only Flutter needs
+be installed to use the Dart language and the Flutter Framework.
+
+[Click here to find instructions to install Flutter on your OS
+(Windows, MacOS, Linux, ChromeOS)](https://docs.flutter.dev/get-started/install)
+
+### Cloning the Repo
+
+Clone the repo using HTML witin Android Studio or Git
+
+```http
+  git@git.cardiff.ac.uk:c1935888/meditationapp.git
+```
+
+![Android Studio Installation](https://i.imgur.com/qyPizqR.png)
+
+Once the project has imported into Android Studio successfully
+
+Perform the command below to update the project with the latest version of the
+libaries/dependeicies
 
 ```bash
   flutter pub get
 ```
+### Running The Meditation App
 
-Open an Android Emulator SDK Version 21 (Lolipop) or above.
+Either connect an Android Device with USB Debugging enabled. [More infomation](https://developer.android.com/studio/run/device)
 
-Click run within your chosen editor.
-    
+Or run a local emulator within Android Studio within the AVD Manager [More infomation](https://developer.android.com/studio/run/managing-avds)
+
+- Testing was done with a Pixel 5 (Emulation) on Android 8.1 API 27.
+
+- Certain features such as Dark Mode (Following System Defaults) require Android 10 API 29.
+
+**Make sure the selected device is running before starting the application on Android Studio**
+
+Click run within Android Studio, this will build the project and display the login screen (if not signed in) on the chosen device.
+
+![Running the application](https://i.imgur.com/UHqXVhX.png)
+## FAQ
+
+#### How do I enable Dark Mode?
+
+The Meditation App follows the system defaults for Dark Mode. This means you'll need a device with **Android 10 or above**.
+
+#### How come I can't, sign in/reigster, hear any audio or submit/view mood data.
+
+The Meditation App requires an active internet connection to perform certain functions wihtin the app.
+
+#### How do I sign up?
+
+The Meditation App currently only supports Email and Password sign up. Using services such as 'Sign in with Google' and 'Sign in with Apple'
+require developer accounts which are not available at this time.
+
+
 ## Screenshots
 
-![App Screenshot](https://i.imgur.com/tw5lfQR.png)
+![App Screenshot](https://i.imgur.com/KfwLn00.png)
 
-![App Screenshot](https://imgur.com/sJBlcBe.png)
+![App Screenshot](https://i.imgur.com/29tlPe7.png)
 
-![App Screenshot](https://imgur.com/XhhpQFd.png)
+![App Screenshot](https://i.imgur.com/1OuZfy4.png)
 
-![App Screenshot](https://imgur.com/HvaKWh2.png)
+![App Screenshot](https://i.imgur.com/WiQCD5j.png)
+
+![App Screenshot](https://i.imgur.com/yxeKDAp.png)
+
+![App Screenshot](https://i.imgur.com/JwktnGu.png)
+
