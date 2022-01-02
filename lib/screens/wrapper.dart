@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meditationapp/models/myuser.dart';
-import 'package:meditationapp/screens/home/UserDashboard.dart';
+import 'package:meditationapp/screens/home/user_dashboard.dart';
 import 'package:meditationapp/screens/authenticate/authenticate.dart';
 import 'package:provider/provider.dart';
 

@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/home/features/moodlogs/mood.dart';
-import 'package:meditationapp/screens/home/features/moodlogs/moodhistory.dart';
+import 'package:meditationapp/screens/home/features/moodlogs/mood_history.dart';
 
-import 'moodlogs/moodicon.dart';
+import 'moodlogs/mood_icon.dart';
 
 class MoodsLogs extends StatefulWidget {
   const MoodsLogs({Key? key}) : super(key: key);

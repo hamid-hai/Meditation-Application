@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meditationapp/screens/authenticate/sign_in.dart';
-import 'package:meditationapp/screens/home/UserDashboard.dart';
+import 'package:meditationapp/screens/home/user_dashboard.dart';
 import 'package:meditationapp/services/auth.dart';
 
 class EmailFieldValidatorRegister {

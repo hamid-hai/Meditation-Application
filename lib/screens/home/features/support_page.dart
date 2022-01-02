@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:meditationapp/screens/home/features/supportgroups/NHS.dart';
+import 'package:meditationapp/screens/home/features/supportgroups/nhs.dart';
 import 'package:meditationapp/screens/home/features/supportgroups/calm.dart';
 import 'package:meditationapp/screens/home/features/supportgroups/papryus.dart';
-import 'package:meditationapp/screens/home/features/supportgroups/parentHelpline.dart';
+import 'package:meditationapp/screens/home/features/supportgroups/parent_helpline.dart';
 import 'package:meditationapp/screens/home/features/supportgroups/samaritans.dart';
 import 'package:meditationapp/screens/home/features/supportgroups/shout.dart';
-import 'package:meditationapp/screens/home/features/supportgroups/youngMinds.dart';
+import 'package:meditationapp/screens/home/features/supportgroups/young_minds.dart';
 
 class SupportPage extends StatefulWidget {
   const SupportPage({Key? key}) : super(key: key);

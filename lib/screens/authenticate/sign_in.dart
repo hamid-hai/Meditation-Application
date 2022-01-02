@@ -4,7 +4,7 @@ import 'package:meditationapp/screens/authenticate/register.dart';
 import 'package:meditationapp/screens/shared/loading.dart';
 
 import 'package:meditationapp/services/auth.dart';
-import '../home/UserDashboard.dart';
+import '../home/user_dashboard.dart';
 
 // REFERENCE FOR NULL SAFETY ERROR
 // https://stackoverflow.com/a/68322295

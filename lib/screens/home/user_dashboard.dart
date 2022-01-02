@@ -1,11 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:meditationapp/screens/home/features/ambientsounds.dart';
-import 'package:meditationapp/screens/home/features/moodslogs.dart';
-import 'package:meditationapp/screens/home/features/supportpage.dart';
+import 'package:meditationapp/screens/home/features/ambient_sounds.dart';
+import 'package:meditationapp/screens/home/features/mood_logs.dart';
+import 'package:meditationapp/screens/home/features/support_page.dart';
 import 'package:meditationapp/services/auth.dart';
 
 class UserDashboard extends StatefulWidget {
+  const UserDashboard({Key? key}) : super(key: key);
+
   @override
   _UserDashboardState createState() => _UserDashboardState();
 }
@@ -51,7 +53,7 @@ void initState() {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Dashboard'),
+          title: const Text('Dashboard'),
           backgroundColor: Colors.deepPurple,
           actions: <Widget>[
             // Text Button used as a replacement for FlatButton
@@ -61,12 +63,12 @@ void initState() {
                   await _auth.signOut();
                 },
                 icon: Icon(Icons.person),
-                label: Text('Sign out'))
+                label: const Text('Sign out'))
           ],
         ),
         body: Stack(
           children: <Widget>[
-            Container(
+            const SizedBox(
               height: 50,
               child: Center(
                 child: Text(
@@ -77,7 +79,7 @@ void initState() {
               ),
             ),
 
-            Container(
+            const SizedBox(
               height: 125,
               child: Center(
                 child: Text(
