@@ -3,6 +3,17 @@ import 'package:meditationapp/screens/authenticate/sign_in.dart';
 import 'package:meditationapp/screens/home/UserDashboard.dart';
 import 'package:meditationapp/services/auth.dart';
 
+class EmailFieldValidatorRegister {
+  static String? validate(String? val) {
+    return val!.isEmpty ? 'Please enter a valid email' : null;
+  }
+}
+
+class PasswordFieldValidatorRegister {
+  static String? validate(String? val) {
+    return val!.length < 6 ? 'Enter a strong password (6+ characters)' : null;
+  }
+}
 
 class Register extends StatefulWidget {
 
@@ -53,7 +64,7 @@ class _RegisterState extends State<Register> {
                 //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
                 padding: EdgeInsets.symmetric(horizontal: 0),
                 child: TextFormField(
-                  validator: (val) => val!.isEmpty ? 'Please enter a valid email' : null,
+                  validator: EmailFieldValidatorRegister.validate,
                   onChanged: (val) {
                     setState(() {
                       email = val;
@@ -69,7 +80,7 @@ class _RegisterState extends State<Register> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 0),
                 child: TextFormField(
-                  validator: (val) => val!.length < 6 ? 'Enter a strong password (6+ characters)' : null,
+                  validator: PasswordFieldValidatorRegister.validate,
                   onChanged: (val) {
                     setState(() {
                       password = val;

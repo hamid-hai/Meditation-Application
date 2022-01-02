@@ -6,6 +6,22 @@ import 'package:meditationapp/screens/shared/loading.dart';
 import 'package:meditationapp/services/auth.dart';
 import '../home/UserDashboard.dart';
 
+// REFERENCE FOR NULL SAFETY ERROR
+// https://stackoverflow.com/a/68322295
+class EmailFieldValidatorSignIn {
+  static String? validate(String? val) {
+    return val!.isEmpty ? 'Please enter a valid email' : null;
+  }
+}
+
+class PasswordFieldValidatorSignIn {
+  static String? validate(String? val) {
+    return val!.length < 6 ? 'Enter a strong password (6+ characters)' : null;
+  }
+}
+
+
+
 class LoginScreen extends StatefulWidget {
 
   // final Function toggleView;
@@ -59,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
-                validator: (val) => val!.isEmpty ? 'Please enter a valid email' : null,
+                validator: EmailFieldValidatorSignIn.validate,
                 onChanged: (val) {
                   setState(() {
                     email = val;
@@ -77,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
-                validator: (val) => val!.length < 6 ? 'Enter a strong password (6+ characters)' : null,
+                validator: PasswordFieldValidatorSignIn.validate,
                 onChanged: (val) {
                   setState(() {
                     password = val;
@@ -145,6 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
             // Changing from Text to TextButton allows actions to be performed on the text with a transparent window being added.
             // Reference https://stackoverflow.com/a/66580557
             TextButton(
+              key: Key('registerTextButton'),
               onPressed: () {
                 Navigator.push(
                   context,
