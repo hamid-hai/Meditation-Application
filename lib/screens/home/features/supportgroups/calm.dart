@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -7,49 +5,45 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 const LatLng destMarker = LatLng(51.50721723582364, -3.1912815018219574);
 
-
 class Calm extends StatelessWidget {
-  Set<Marker> _markers = Set<Marker>();
-
-  Completer<GoogleMapController> _controller = Completer();
-
   late LatLng destinationMarker;
 
+  Calm({Key? key}) : super(key: key);
+
   void setLocationMarkers() {
-    destinationMarker = LatLng(
-        destMarker.latitude,
-        destMarker.longitude
-    );
+    destinationMarker = LatLng(destMarker.latitude, destMarker.longitude);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CALM"),
+        title: const Text("CALM"),
         backgroundColor: Colors.deepPurple,
       ),
       body: Column(
         children: <Widget>[
           Stack(
             alignment: Alignment.center,
-            children: <Widget>[
-              Image(image: NetworkImage('https://centaur-wp.s3.eu-central-1.amazonaws.com/designweek/prod/content/uploads/2021/09/14145316/CALM_Logo.jpg'))
+            children: const <Widget>[
+              Image(
+                  image: NetworkImage(
+                      'https://centaur-wp.s3.eu-central-1.amazonaws.com/designweek/prod/content/uploads/2021/09/14145316/CALM_Logo.jpg'))
             ],
           ),
-          SizedBox(height: 5,),
-          ListTile(
+          const SizedBox(
+            height: 5,
+          ),
+          const ListTile(
             title: Text('Who is this service for?'),
             subtitle: Text('CALM is a service designed for Men'),
           ),
-          ListTile(
+          const ListTile(
             title: Text('Opening Hours'),
-            subtitle: Text('Phone and Web Chat\n\n- 5PM-Midnight\n\nYou can find out more infomation through the\nCALM Charity website.'),
+            subtitle: Text(
+                'Phone and Web Chat\n\n- 5PM-Midnight\n\nYou can find out more information through the\nCALM Charity website.'),
           ),
-
-
-
-          ListTile(
+          const ListTile(
             title: Text('How to contact'),
           ),
           Row(
@@ -57,26 +51,36 @@ class Calm extends StatelessWidget {
             children: [
               ElevatedButton.icon(
                   onPressed: () async {
-                    final url = 'tel:101';
+                    const url = 'tel:101';
                     if (await canLaunch(url)) {
                       await launch(url);
                     }
                   },
-                  icon: Icon(Icons.phone), label: Text('0800585858')),
-              ElevatedButton.icon(onPressed: () async {
-                final url = 'https://www.thecalmzone.net/';
+                  icon: const Icon(Icons.phone),
+                  label: const Text('0800585858')),
+              ElevatedButton.icon(
+                  onPressed: () async {
+                    const url = 'https://www.thecalmzone.net/';
 
-                if (await canLaunch(url)) {
-                  await launch(url);
-                }
-              }, icon: Icon(Icons.search), label: Text('CALM\nwebsite', textAlign: TextAlign.center,)),
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    }
+                  },
+                  icon: const Icon(Icons.search),
+                  label: const Text(
+                    'CALM\nwebsite',
+                    textAlign: TextAlign.center,
+                  )),
               ElevatedButton.icon(
                 onPressed: () async {
-                  final url = 'https://www.thecalmzone.net/help/webchat/';
+                  const url = 'https://www.thecalmzone.net/help/webchat/';
                   if (await canLaunch(url)) {
                     await launch(url);
                   }
-                }, icon: Icon(Icons.chat), label: Text('Web Chat'),),
+                },
+                icon: const Icon(Icons.chat),
+                label: const Text('Web Chat'),
+              ),
             ],
           ),
         ],
