@@ -21,6 +21,7 @@ class _MoodHistoryState extends State<MoodHistory> {
     final Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
         .collection('diaries')
         .where('uid', isEqualTo: user!.uid)
+        .orderBy('dateandtime', descending: true)
         .snapshots(includeMetadataChanges: true);
 
     return Scaffold(
