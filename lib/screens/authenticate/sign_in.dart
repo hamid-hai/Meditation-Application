@@ -8,13 +8,13 @@ import '../home/UserDashboard.dart';
 
 // REFERENCE FOR NULL SAFETY ERROR
 // https://stackoverflow.com/a/68322295
-class EmailFieldValidator {
+class EmailFieldValidatorSignIn {
   static String? validate(String? val) {
     return val!.isEmpty ? 'Please enter a valid email' : null;
   }
 }
 
-class PasswordFieldValidator {
+class PasswordFieldValidatorSignIn {
   static String? validate(String? val) {
     return val!.length < 6 ? 'Enter a strong password (6+ characters)' : null;
   }
@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
-                validator: EmailFieldValidator.validate,
+                validator: EmailFieldValidatorSignIn.validate,
                 onChanged: (val) {
                   setState(() {
                     email = val;
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
-                validator: PasswordFieldValidator.validate,
+                validator: PasswordFieldValidatorSignIn.validate,
                 onChanged: (val) {
                   setState(() {
                     password = val;
