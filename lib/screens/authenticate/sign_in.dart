@@ -161,6 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
             // Changing from Text to TextButton allows actions to be performed on the text with a transparent window being added.
             // Reference https://stackoverflow.com/a/66580557
             TextButton(
+              key: Key('registerTextButton'),
               onPressed: () {
                 Navigator.push(
                   context,
