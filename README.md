@@ -1,4 +1,3 @@
-
 # The Meditation App - Android
 
 The Meditation App is a clean, easy to use Android app, which is designed to help users keep track of how they're feeling during different days and have the ability to listen to a range of calming, relaxing sounds.
@@ -108,9 +107,25 @@ Or run a local emulator within Android Studio within the AVD Manager [More infom
 
 **Make sure the selected device is running before starting the application on Android Studio**
 
+### SDK Configuation
+
+If no Dart SDK is found, please configure it within Android Studio settings please follow these steps
+
+- Go to File -> Settings -> Language & Framework -> Flutter
+
+- Choose Dart's SDK path (This should lead to where you installed Flutter earlier)
+  - Within the Flutter directory the SDK is located under 'bin\cache\dart-sdk'
+
+- Press apply and OK. 
+
+### Building the project
+
 Click run within Android Studio, this will build the project and display the login screen (if not signed in) on the chosen device.
 
+**Please note the build may fail the first time, building the project a second time usually fixes this issue**
+
 ![Running the application](https://i.imgur.com/UHqXVhX.png)
+
 ## FAQ
 
 #### How do I enable Dark Mode?
