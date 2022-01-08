@@ -42,30 +42,34 @@ The Meditation App is a clean, easy to use Android app, which is designed to hel
 
 ## Requirements
 
-### Functional requirements
--	Contain a map view with pinpoints of local meditation centres, and hospitals nearby.
--	Contains a list of resources with different contact methods for users and contain a description of what the said resources are for. - MVP
--	A way of logging in and keeping a mood log of how you have been feeling over the days - MVP
--	A way of looking back on days to see how you are feeling on the said day
--	Have the ability to play audio containing a range of ambient sounds such as rain, wind and storms and have the ability for the sounds to be played in the background. - MVP
--	The app should utilise a mapping platform to display businesses and companies that could benefit the user.
--	Ability for the user to create a new account using a signup form using a name, email and password and have it logged within an external cloud database. - MVP
--	Ability for a user to login using credentials to their own dashboard. - MVP
--	External Resources should have links to website, SMS and phone calls if needed quickly. - MVP
+###Functional requirements
+
+-	A way of logging a mood log of how you have been feeling on a particular day - MVP
+-	The ability to look back on days to see how you are feeling on the said day - MVP
+-	Ability to play audio containing a range of ambient sounds such as rain, wind and storms and have the ability for the sounds to be played in the background. - MVP
+-	The app should utilise a mapping platform (Google/Apple Maps) to display businesses and companies that could benefit the user
+-	Ability for the user to create a new account using a signup form using email and password and have it logged within an database. - MVP
+-	Ability for a user to login using credentials to their own dashboard. – MVP
+-	Contains a list of external resources with different contact methods for users and contain a description of what the said resources are for. - MVP
+-	External Resources should have links to website, SMS and phone calls for quick access.
+-	The app should have a 99% uptime to ensure the user is almost always able to access the app at any time as long as they have an internet connection (login, form submission). 
+-	The app should contain three sections once signed in (Ambient Sounds, Mood Board, Extra Support). – MVP
+
 ### Non-functional requirements
-- The app needs to have a clean and simple layout to ensure that there are no complicated designs within the app preventing the user from meeting their needs. - MVP
+
+-	The app needs to have a clean and simple layout to ensure that there are no complicated designs within the app preventing the user from meeting their needs. - MVP
 -	Security must be held to a high standard with sensitive data being stored within the application regarding mood boards.
--	The app should contain four sections once signed in (Ambient Sounds, Mood Board, Extra Support and Advert removal). - MVP
--	The app should have a small response time between requests through the server and the app to ensure the user is not waiting long periods of time after sending data requests to the server (e.g. send a mood report). - MVP
--	The app should have a 99% uptime to ensure the user is almost always able to access the app at any time as long as they have an internet connection (login, form submission). - MVP
--	The app should be able to handle multiple requests at one given time which ensures that the app is scalable to a certain extent. - MVP
+-	The ability to display inspirational quotes from the internet - MVP
+-	The app should have a small response time between requests through the server and the app to ensure the user is not waiting long periods of time after sending data requests to the server (e.g. send a mood report). 
+-	The app should be able to handle multiple requests at one given time which ensures that the app is scalable to a certain extent. 
 -	The app needs to have a high level of accessibility ensuring that on-screen dialogue is readable by a screen reader (Voiceover/Talkback).
+-	Ability to play audio files in the background – MVP
+
 ### Data requirements
--	A cloud-based database to manage large amounts of data without taking up storage on the device – MVP
--	A table within the database containing user personal information such as Name, DOB, Email and Postcode
--	A table containing login information such as username/email and a password - MVP
--	A table containing local centres and their information such as locations and phone numbers - MVP
--	A table containing mood logs for a user which can be looked backed on - MVP
+
+-	Database table with records containing login information coming from registration that can be used to sign in (email and password). – MVP
+-	A database with records containing mood log records with fields regarding date/time and the mood at that date/time. -  MVP
+
 
 ## Installation
 
