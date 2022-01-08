@@ -42,7 +42,7 @@ The Meditation App is a clean, easy to use Android app, which is designed to hel
 
 ## Requirements
 
-###Functional requirements
+### Functional requirements
 
 -	A way of logging a mood log of how you have been feeling on a particular day - MVP
 -	The ability to look back on days to see how you are feeling on the said day - MVP
