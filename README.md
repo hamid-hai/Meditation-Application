@@ -36,6 +36,7 @@ The Meditation App is a clean, easy to use Android app, which is designed to hel
 - [google_maps_flutter](https://pub.dev/packages/google_maps_flutter) - Google Maps implentation within Support Pages showing where local services.
 - [flutter_spinkit](https://pub.dev/packages/flutter_spinkit) - Used to provide loading animaitons when the user is waiting for a task to complete.
 - [provider](https://pub.dev/packages/provider) - Is used to determine what screen to show depending on the sign-in state of a user.
+- [integration_test](https://docs.flutter.dev/testing/integration-tests) - Built into FLutter SDK 2, provides the ability to perform integration tests within an application.
 
 
 
