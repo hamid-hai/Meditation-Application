@@ -41,7 +41,7 @@ The Meditation App is a clean, easy to use Android app, which is designed to hel
 
 
 
-## Requirements
+## Requirements / Acceptance Criteria
 
 ### Functional requirements
 
