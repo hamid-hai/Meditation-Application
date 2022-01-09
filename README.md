@@ -44,32 +44,32 @@ The Meditation App is a clean, easy to use Android app, which is designed to hel
 
 ### Functional requirements
 
--	A way of logging a mood log of how you have been feeling on a particular day - MVP
--	The ability to look back on days to see how you are feeling on the said day - MVP
--	Ability to play audio containing a range of ambient sounds such as rain, wind and storms and have the ability for the sounds to be played in the background. - MVP
--	The app should utilise a mapping platform (Google/Apple Maps) to display businesses and companies that could benefit the user
--	Ability for the user to create a new account using a signup form using email and password and have it logged within an database. - MVP
--	Ability for a user to login using credentials to their own dashboard. – MVP
--	Contains a list of external resources with different contact methods for users and contain a description of what the said resources are for. - MVP
--	External Resources should have links to website, SMS and phone calls for quick access.
--	The app should have a 99% uptime to ensure the user is almost always able to access the app at any time as long as they have an internet connection (login, form submission). 
--	The app should contain three sections once signed in (Ambient Sounds, Mood Board, Extra Support). – MVP
+- [x]	Ability for the user to create a new account using a signup form using email and password and have it logged within an database. - MVP
+- [x]	Ability for a user to login using credentials to their own dashboard. – MVP
+- [x]	The app should contain three sections once signed in (Ambient Sounds, Mood Board, Extra Support). – MVP
+- [x]	A way of logging a mood log of how you have been feeling on a particular day - MVP
+- [x]	The ability to look back on days to see how you are feeling on the said day - MVP
+- [x]	Ability to play audio containing a range of ambient sounds such as rain, wind and storms and have the ability for the sounds to be played in the background. - MVP
+- [x]	Contains a list of external resources with different contact methods for users and contain a description of what the said resources are for. - MVP
+- [x]	The app should utilise a mapping platform (Google/Apple Maps) to display businesses and companies that could benefit the user
+- [x]	External Resources should have links to website, SMS and phone calls for quick access.
+- [x]	The app should have a 99% uptime to ensure the user is almost always able to access the app at any time as long as they have an internet connection (login, form submission). 
+
 
 ### Non-functional requirements
 
--	The app needs to have a clean and simple layout to ensure that there are no complicated designs within the app preventing the user from meeting their needs. - MVP
--	Security must be held to a high standard with sensitive data being stored within the application regarding mood boards.
--	The ability to display inspirational quotes from the internet - MVP
--	The app should have a small response time between requests through the server and the app to ensure the user is not waiting long periods of time after sending data requests to the server (e.g. send a mood report). 
--	The app should be able to handle multiple requests at one given time which ensures that the app is scalable to a certain extent. 
--	The app needs to have a high level of accessibility ensuring that on-screen dialogue is readable by a screen reader (Voiceover/Talkback).
--	Ability to play audio files in the background – MVP
+- [x]	The app needs to have a clean and simple layout to ensure that there are no complicated designs within the app preventing the user from meeting their needs. - MVP
+- [x]	Security must be held to a high standard with sensitive data being stored within the application regarding mood boards.
+- [x]	The ability to display inspirational quotes from the internet - MVP
+- [x]	The app should have a small response time between requests through the server and the app to ensure the user is not waiting long periods of time after sending data requests to the server (e.g. send a mood report). 
+- [x]	The app should be able to handle multiple requests at one given time which ensures that the app is scalable to a certain extent. 
+- [ ]	The app needs to have a high level of accessibility ensuring that on-screen dialogue is readable by a screen reader (Voiceover/Talkback).
+- [x]	Ability to play audio files in the background – MVP
 
 ### Data requirements
 
--	Database table with records containing login information coming from registration that can be used to sign in (email and password). – MVP
--	A database with records containing mood log records with fields regarding date/time and the mood at that date/time. -  MVP
-
+- [x]	Database table with records containing login information coming from registration that can be used to sign in (email and password). – MVP
+- [x]	A database with records containing mood log records with fields regarding date/time and the mood at that date/time. -  MVP
 
 ## Installation
 
