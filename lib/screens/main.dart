@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final Future<FirebaseApp> _fbapp = Firebase.initializeApp();
     return StreamProvider<MyUser?>.value(
       // Following versions 5.0 and above, initialData: null is required
       // Reference https://pub.dev/packages/provider/changelog#500-nullsafety0
