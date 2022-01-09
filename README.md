@@ -131,6 +131,25 @@ Click run within Android Studio, this will build the project and display the log
 
 ![Running the application](https://i.imgur.com/UHqXVhX.png)
 
+## Running Tests
+
+The Medition Application contains unit and integrations tests. Both which should work straight out of the box.
+
+**Ensure ```flutter pub get``` has ran using your prefered method (command line/Android Studio)**
+
+### Unit Tests
+
+- Unit Tests are stored under the 'test' directory from the root of the project
+- Two tests are stored here designed to check the validaion on both Sign-in and Register Screens ('email_password_validator_signin_test.dart',  'email_password_validator_register_test.dart').
+- To run these tests simply press the green start arrow next to the beggining of the files / at the ```main()``` method.
+
+### Integeration Tests
+
+- The Integeration Test is stored under 'integration_test' from the root of the project
+- This can either be ran by pressing the green arrow next to ```main()``` method. ***or*** by running ```flutter test integration_test``` within the command line.
+- This will run through the entire application testing aspects of The Meditation App.
+
+
 ## FAQ
 
 #### How do I enable Dark Mode?
