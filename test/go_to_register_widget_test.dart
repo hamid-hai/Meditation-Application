@@ -1,6 +1,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_test/flutter_test.dart';
 // import 'package:meditationapp/screens/authenticate/sign_in.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:mockito/mockito.dart';
 //
 // void main() {
 //   testWidgets('Go to Register Screen', (WidgetTester tester) async {
@@ -15,5 +17,5 @@
 //     expect(titleFinder, findsOneWidget);
 //   });
 // }
-
-// Firebase Initalisation Error regarding a test envrioment, complex issue to fix at a later stage
+//
+// // Firebase Initalisation Error regarding a test envrioment, complex issue to fix at a later stage

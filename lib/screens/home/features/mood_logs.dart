@@ -56,6 +56,7 @@ class _MoodsLogsState extends State<MoodsLogs> {
               TextButton.icon(
                   icon: const Icon(Icons.date_range),
                   label: const Text('Pick a date'),
+                  key: Key('DatePicker'),
                   onPressed: () => showDatePicker(
                           context: context,
                           initialDate: DateTime.now(),
@@ -76,6 +77,7 @@ class _MoodsLogsState extends State<MoodsLogs> {
               TextButton.icon(
                   icon: const Icon(Icons.timer),
                   label: const Text('Pick a Time'),
+                  key: Key('TimePicker'),
                   onPressed: () => showTimePicker(
                           context: context, initialTime: TimeOfDay.now())
                       .then((time) => {
@@ -87,6 +89,7 @@ class _MoodsLogsState extends State<MoodsLogs> {
                 height: 40,
                 width: 40,
                 child: FloatingActionButton(
+                  key: Key('DateAndTimeTickButton'),
                   child: const Icon(Icons.done),
                   onPressed: () => setState(() {
                     datetime = datepicked + '  ' + timepicked;
@@ -144,6 +147,7 @@ class _MoodsLogsState extends State<MoodsLogs> {
         TextButton.icon(
           icon: const Icon(Icons.send),
           label: const Text('Submit'),
+          key: Key('SubmitButtonMood'),
           onPressed: () async {
             // setState(() {
             User? user = FirebaseAuth.instance.currentUser;
@@ -154,6 +158,7 @@ class _MoodsLogsState extends State<MoodsLogs> {
           },
         ),
         TextButton.icon(
+          key: Key('MoodHistoryButton'),
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const MoodHistory()));

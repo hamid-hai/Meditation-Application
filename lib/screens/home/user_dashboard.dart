@@ -59,6 +59,7 @@ class _UserDashboardState extends State<UserDashboard> {
             // Text Button used as a replacement for FlatButton
             // Reference https://stackoverflow.com/a/51266672
             TextButton.icon(
+              key: Key('SignOutButton'),
                 onPressed: () async {
                   await _auth.signOut();
                 },
@@ -148,6 +149,7 @@ class _UserDashboardState extends State<UserDashboard> {
                 primary: false,
                 children: <Widget>[
                   Card(
+                    key: Key('Sounds'),
                     elevation: 4,
                     // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                     child: InkWell(
@@ -161,7 +163,7 @@ class _UserDashboardState extends State<UserDashboard> {
                         // REFERENCE https://stackoverflow.com/a/45948243
                         ScaffoldMessenger.of(context)
                             .showSnackBar(const SnackBar(
-                          content: Text("Ambient Sounds"),
+                          content: Text("Sounds"),
                         ));
                       },
                       child: Column(
@@ -176,6 +178,7 @@ class _UserDashboardState extends State<UserDashboard> {
                     ),
                   ),
                   Card(
+                    key: Key('Mood'),
                     elevation: 4,
                     child: InkWell(
                       onTap: () {
@@ -201,6 +204,7 @@ class _UserDashboardState extends State<UserDashboard> {
                     ),
                   ),
                   Card(
+                    key: Key('Support'),
                     elevation: 4,
                     child: InkWell(
                       onTap: () {

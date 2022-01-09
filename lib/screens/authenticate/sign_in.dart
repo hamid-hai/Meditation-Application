@@ -75,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
+                key: Key('emailField'),
                 validator: EmailFieldValidatorSignIn.validate,
                 onChanged: (val) {
                   setState(() {
@@ -93,6 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextFormField(
+                key: Key('passwordField'),
                 validator: PasswordFieldValidatorSignIn.validate,
                 onChanged: (val) {
                   setState(() {
@@ -137,6 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 child: const Text(
                   'Login',
+                  key: Key('loginInButton'),
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),

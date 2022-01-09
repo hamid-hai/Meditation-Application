@@ -43,6 +43,7 @@ class _SoundsState extends State<Sounds> {
               primary: true,
               children: <Widget>[
                 Card(
+                  key: Key('Rain'),
                   elevation: 4,
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                   child: InkWell(
@@ -68,6 +69,7 @@ class _SoundsState extends State<Sounds> {
                   ),
                 ),
                 Card(
+                  key: Key('Waves'),
                   elevation: 4,
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                   child: InkWell(
@@ -78,7 +80,7 @@ class _SoundsState extends State<Sounds> {
                     onLongPress: () {
                       // REFERENCE https://stackoverflow.com/a/45948243
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text("A relaxing rain sound"),
+                        content: Text("A relaxing waves sound"),
                       ));
                     },
                     child: Column(
@@ -93,6 +95,7 @@ class _SoundsState extends State<Sounds> {
                   ),
                 ),
                 Card(
+                  key: Key('Subway'),
                   elevation: 4,
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                   child: InkWell(
@@ -118,6 +121,7 @@ class _SoundsState extends State<Sounds> {
                   ),
                 ),
                 Card(
+                  key: Key('City'),
                   elevation: 4,
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                   child: InkWell(
@@ -143,6 +147,7 @@ class _SoundsState extends State<Sounds> {
                   ),
                 ),
                 Card(
+                  key: Key('Fire'),
                   elevation: 4,
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                   child: InkWell(
@@ -168,6 +173,7 @@ class _SoundsState extends State<Sounds> {
                   ),
                 ),
                 Card(
+                  key: Key('Forest'),
                   elevation: 4,
                   // REFERENCE: https://api.flutter.dev/flutter/material/InkWell-class.html
                   child: InkWell(
