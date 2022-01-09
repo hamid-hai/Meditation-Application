@@ -42,6 +42,7 @@ class _SupportPageState extends State<SupportPage> {
     // REFERENCE https://docs.flutter.dev/cookbook/lists/basic-list
     return ListView(children: <Widget>[
       Card(
+        key: Key('NHS'),
         elevation: 2,
         child: ListTile(
           leading: const CircleAvatar(
@@ -57,6 +58,7 @@ class _SupportPageState extends State<SupportPage> {
         ),
       ),
       Card(
+        key: Key('Samaritans'),
         elevation: 2,
         child: ListTile(
           leading: const CircleAvatar(
@@ -72,6 +74,7 @@ class _SupportPageState extends State<SupportPage> {
         ),
       ),
       Card(
+        key: Key('Shout'),
         elevation: 2,
         child: ListTile(
           leading: const CircleAvatar(
@@ -87,6 +90,7 @@ class _SupportPageState extends State<SupportPage> {
         ),
       ),
       Card(
+        key: Key('Calm'),
         elevation: 2,
         child: ListTile(
           leading: const CircleAvatar(
@@ -102,6 +106,7 @@ class _SupportPageState extends State<SupportPage> {
         ),
       ),
       Card(
+        key: Key('Papryus'),
         elevation: 2,
         child: ListTile(
           leading: const CircleAvatar(
@@ -117,6 +122,7 @@ class _SupportPageState extends State<SupportPage> {
         ),
       ),
       Card(
+        key: Key('YoungMinds'),
         elevation: 2,
         child: ListTile(
           leading: const CircleAvatar(
@@ -132,6 +138,7 @@ class _SupportPageState extends State<SupportPage> {
         ),
       ),
       Card(
+        key: Key('ParentHelpline'),
         elevation: 2,
         child: ListTile(
           leading: const CircleAvatar(
