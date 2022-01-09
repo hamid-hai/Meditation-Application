@@ -24,7 +24,7 @@ class _AuthenticateState extends State<Authenticate> {
       if (showSignIn) {
         return LoginScreen();
     } else {
-        return Register();
+        return const Register();
       }
   }
 }

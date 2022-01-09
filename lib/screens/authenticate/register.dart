@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:meditationapp/screens/authenticate/sign_in.dart';
+import 'package:meditationapp/screens/home/user_dashboard.dart';
 import 'package:meditationapp/services/auth.dart';
 
+class EmailFieldValidatorRegister {
+  static String? validate(String? val) {
+    return val!.isEmpty ? 'Please enter a valid email' : null;
+  }
+}
+
+class PasswordFieldValidatorRegister {
+  static String? validate(String? val) {
+    return val!.length < 6 ? 'Enter a strong password (6+ characters)' : null;
+  }
+}
 
 class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
+
 
   // final Function toggleView;
   // Register({ required this.toggleView });
@@ -26,12 +39,12 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Register"),
+        title: const Text("Register"),
         backgroundColor: Colors.deepPurple,
       ),
 
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 50),
         child: Form(
           key: _formkey,
           child: Column(
@@ -39,7 +52,7 @@ class _RegisterState extends State<Register> {
               Padding(
                 padding: const EdgeInsets.only(top: 60.0),
                 child: Center(
-                  child: Container(
+                  child: SizedBox(
                       width: 200,
                       height: 150,
                       /*decoration: BoxDecoration(
@@ -50,47 +63,48 @@ class _RegisterState extends State<Register> {
               ),
               Padding(
                 //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-                padding: EdgeInsets.symmetric(horizontal: 0),
+                padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: TextFormField(
-                  validator: (val) => val!.isEmpty ? 'Please enter a valid email' : null,
+                  validator: EmailFieldValidatorRegister.validate,
                   onChanged: (val) {
                     setState(() {
                       email = val;
                     });
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Email',
                       hintText: 'Enter valid email'),
                 ),
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0),
+                padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: TextFormField(
-                  validator: (val) => val!.length < 6 ? 'Enter a strong password (6+ characters)' : null,
+                  validator: PasswordFieldValidatorRegister.validate,
                   onChanged: (val) {
                     setState(() {
                       password = val;
                     });
                   },
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Password',
                       hintText: 'Enter password'),
                 ),
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               ElevatedButton(
-                  child: Text(
+                  child: const Text(
                     'Register',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
                     if(_formkey.currentState!.validate()){
                       dynamic result = await _auth.regEmailPassword(email, password);
-                      MaterialPageRoute(builder: (context) => LoginScreen());
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => UserDashboard())
+                      );
                       if(result == null) {
                         setState(() {
                           regError = 'Please supply valid credentials';
@@ -99,10 +113,10 @@ class _RegisterState extends State<Register> {
                     }
                   }
               ),
-              SizedBox(height: 12.0),
+              const SizedBox(height: 12.0),
               Text(
                 regError,
-                style: TextStyle(color: Colors.red, fontSize: 14.0),
+                style: const TextStyle(color: Colors.red, fontSize: 14.0),
               )
             ],
           ),

@@ -35,6 +35,11 @@ dependencies:
 
   #HTTP dependency to call Daily Quotes from the internet
   http: ^0.13.4
+  #DIO is an alternative to HTTP
+  dio: ^4.0.4
+
+  #Mockito is used to create a mock Firebase instance for testing
+  mockito: ^5.0.17
 
   #Audioplayer dependecy for creating player for the soundboard
 #  audioplayer: ^0.8.1
@@ -45,18 +50,18 @@ dependencies:
 
   #Google Maps
   google_maps_flutter: ^2.1.1
-
-#  Mood Logs graphs and pie charts
-  charts_flutter: ^0.12.0
-  pie_chart: ^5.1.0
-  sqflite: ^2.0.1
   path_provider: ^2.0.8
 
   # Provider will help determine if a user is signed in and switch the screens depending on the case
   # Google provided solution
   provider: ^6.0.1
 
+  #Junit Reporting for testing
+  better_test_reporter: ^0.0.1
+
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
 
